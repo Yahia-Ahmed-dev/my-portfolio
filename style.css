@@ -24,6 +24,7 @@ body {
   color: var(--text-light);
   overflow-x: hidden;
   line-height: 1.6;
+  text-align: right; /* لضمان التنسيق العربي */
 }
 
 /* إضاءات الخلفية */
@@ -35,6 +36,11 @@ body {
   left: 0;
   z-index: -1;
   overflow: hidden;
+}
+
+body,
+html {
+  overflow-x: hidden;
 }
 
 .glow-circle {
@@ -184,22 +190,22 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   position: relative;
+  min-height: 100vh;
 }
 
 .hero-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
   max-width: 1300px;
   margin: 0 auto;
-  opacity: 0;
-  animation: fadeInHero 1.5s ease forwards;
+  opacity: 0; /* خليه مخفي */
+  transform: translateY(20px); /* نزله شوية */
 }
 
 .hero-content {
   flex: 1;
-  text-align: left;
+  text-align: right;
   position: relative;
   overflow: hidden;
 }
@@ -212,7 +218,7 @@ body {
 /* الصورة الكرتونية */
 .cartoon-container {
   position: relative;
-  width: 400px;
+  width: 450px;
   margin: 0 auto;
 }
 
@@ -301,7 +307,7 @@ body {
   -webkit-text-fill-color: transparent;
   font-size: 2.8rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.3;
   display: inline-block;
   transform: translateX(100%);
   opacity: 0;
@@ -313,17 +319,15 @@ body {
   0% {
     transform: translateX(-100%);
     opacity: 0;
-    filter: blur(10px);
+    filter: blur(5px);
   }
   70% {
     transform: translateX(10px);
     opacity: 0.8;
-    filter: blur(5px);
   }
   100% {
     transform: translateX(0);
     opacity: 1;
-    filter: blur(0);
   }
 }
 
@@ -331,17 +335,14 @@ body {
   0% {
     transform: translateX(100%);
     opacity: 0;
-    filter: blur(10px);
   }
   70% {
     transform: translateX(-10px);
     opacity: 0.8;
-    filter: blur(5px);
   }
   100% {
     transform: translateX(0);
     opacity: 1;
-    filter: blur(0);
   }
 }
 
@@ -386,51 +387,32 @@ body {
 .hero-subtitle {
   font-size: 1.2rem;
   color: var(--text-gray);
-  margin-bottom: 40px;
-  margin-top: 10px;
+  margin-bottom: 30px;
+  margin-top: 15px;
   line-height: 1.8;
   max-width: 90%;
-  opacity: 0;
   transform: translateY(30px);
-  animation: fadeInUp 1s ease forwards;
-  animation-delay: 1s;
+  opacity: 0;
+  filter: blur(10px); /* بلور قوي في البداية */
+  transform: translateY(40px); /* إزاحة للأسفل */
+  animation: fadeInUpBlur 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 1s; /* يظهر بعد العنوان بـ 0.6 ثانية إضافية */
 }
 
-@keyframes fadeInHero {
+@keyframes fadeInUpBlur {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.5;
+    filter: blur(4px); /* يبدأ البلور يقل تدريجياً */
   }
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-.hero.visible .name-outline {
-  animation: fadeUp 0.8s ease 0.2s forwards;
-}
-
-.hero.visible .title-highlight {
-  animation: fadeUp 0.8s ease 0.4s forwards;
-}
-
-.hero.visible .hero-subtitle {
-  animation: fadeUp 0.8s ease 0.6s forwards;
-}
-
-.hero.visible .hero-buttons {
-  animation: fadeUp 0.8s ease 0.8s forwards;
-}
-
-.hero.visible .hero-image {
-  animation: fadeUp 0.8s ease 1s forwards;
-}
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    filter: blur(0); /* يختفي البلور تماماً */
   }
 }
 
@@ -455,7 +437,6 @@ body {
   background: linear-gradient(45deg, var(--neon-red), var(--dark-red));
   color: white;
   box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
-  font-size: 6px;
   text-decoration: none;
   border-radius: 50px;
   padding: 15px 30px;
@@ -502,6 +483,25 @@ body {
   max-width: 1300px;
   margin: 0 auto;
 }
+.section-title::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 60%;
+  background: linear-gradient(90deg, var(--neon-red), var(--neon-yellow));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  border-radius: 10px;
+  z-index: -1;
+  filter: blur(15px);
+}
+
+.section-title:hover::before {
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(1);
+}
 
 .section-title {
   font-size: 2.8rem;
@@ -509,9 +509,11 @@ body {
   font-weight: 800;
   text-align: center;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.1; /* يبدأ شبه شفاف */
+  transform: scale(0.3) rotate(-20deg) translateY(-50px); /* نقطة صغيرة ومائلة */
 }
 
 .section-title:after {
@@ -530,7 +532,7 @@ body {
 /* المشاريع */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
 }
 
@@ -561,8 +563,8 @@ body {
 /* تصميم العلامة المائية (المثلث المائل) */
 .project-badge {
   position: absolute;
-  top: 20px;
-  left: -35px; /* لضبط زاوية الميل */
+  top: 17px;
+  left: -35px; /* نقلها لليمين */
   background: linear-gradient(135deg, #ff0000, #990000); /* تدرج أحمر نيون */
   color: white;
   padding: 5px 40px;
@@ -590,7 +592,7 @@ body {
 .project-img img {
   width: 100%;
   height: auto;
-  min-height: 600px; /* ضعف ارتفاع الحاوية */
+  min-height: 550px; /* ضعف ارتفاع الحاوية */
   object-fit: cover;
   object-position: top; /* تبدأ من الأعلى */
   transition: transform 7s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* أبطأ وأكثر سلاسة */
@@ -886,6 +888,10 @@ footer {
   animation: borderGradient 3s linear infinite;
 }
 
+.feature h4 {
+  margin-bottom: 5px;
+}
+
 .feature-icon {
   font-size: 2rem;
   color: var(--neon-red);
@@ -1107,18 +1113,18 @@ footer {
 
   /* Hero Section على الموبايل */
   #home {
-    padding: 100px 20px 60px;
+    padding: 80px 20px 0px !important;
     text-align: left !important;
   }
 
   .hero-container {
     flex-direction: column-reverse;
     padding: 0;
-    gap: 0px;
+    gap: 0 !important;
   }
 
   .hero-content {
-    text-align: left !important;
+    text-align: center !important;
     width: 100%;
     max-width: 100%;
     margin-left: 0 !important;
@@ -1126,10 +1132,13 @@ footer {
     margin-top: 0 !important;
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 20px;
+    padding-left: 0; /* إلغاء البادينج الجانبي */
   }
 
   .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 0px;
   }
 
@@ -1198,6 +1207,7 @@ footer {
   }
   .hero-subtitle {
     font-size: 1rem;
+    max-width: 100%; /* لضمان عدم خروج النص عن الشاشة */
   }
 
   .btn-neon-red,
@@ -1308,6 +1318,12 @@ footer {
     width: 250px !important;
   }
 
+  .hero-image {
+    flex: 1;
+    position: relative;
+    margin-bottom: -40px;
+  }
+
   .cartoon-img {
     width: 250px !important;
     height: 250px !important;
@@ -1394,5 +1410,123 @@ footer {
   .project-card:hover,
   .service-card:hover {
     border-color: rgba(255, 0, 60, 0.15);
+  }
+}
+
+.project-card,
+.skill-item,
+.service-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease; /* سرعة الظهور */
+}
+
+/* أضف هذا لكل عنصر يتحرك أو فيه أنيميشن */
+.project-card,
+.service-card,
+.cartoon-img,
+.glow-circle {
+  will-change: transform, opacity;
+  transform: translateZ(0); /* تفعيل الـ GPU */
+}
+
+/* تأكد أن هذه العناصر مخفية مبدئياً ليقوم الـ JS بإظهارها */
+.project-card,
+.service-card,
+.skill-item,
+.section-title,
+.about-section,
+.stat {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* لمنع أي مشاكل في العرض على الموبايل */
+.nav-links.active {
+  right: 0 !important;
+}
+
+/* تحسينات التجاوب (Responsiveness) */
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 50px;
+  }
+  .hero-content {
+    text-align: center;
+  }
+  .hero-subtitle {
+    margin: 20px auto;
+  }
+  .cartoon-container,
+  .cartoon-img {
+    width: 300px;
+    height: 300px;
+  }
+  .float-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+  .nav-links {
+    position: fixed;
+    right: -100%;
+  } /* هنا تحتاج إضافة JS لفتح المينو */
+  .hamburger {
+    display: block;
+  }
+}
+
+/* تحسين شكل الأزرار */
+.btn-outline {
+  border: 2px solid var(--neon-red);
+  color: white;
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--neon-red);
+}
+
+.glow-circle,
+.cartoon-img,
+.project-card {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* WhatsApp Glow Animation */
+.whatsapp-glow {
+  background: linear-gradient(45deg, var(--neon-red), #ff6600);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+  position: fixed;
+  bottom: 20px;
+  left: 17px;
+  width: 55px;
+  height: 55px;
+  text-decoration: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: white;
+  z-index: 1000;
+  animation: pulse-glow 2s infinite;
+}
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+  }
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
   }
 }
