@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>يحيى أحمد | WordPress Developer مصمم ومطور مواقع</title>
+
+    <!-- SEO Meta -->
     <meta
       name="description"
       content="يحيى أحمد - WordPress Developer متخصص في إنشاء مواقع عملية وذكية، تجذب العملاء وتزيد المبيعات."
@@ -11,11 +14,11 @@
       name="keywords"
       content="WordPress Developer, تصميم مواقع عملية, صفحات هبوط, Elementor, مواقع احترافية"
     />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
-    <title>WordPress Developer</title>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yahia-ahmed.vercel.app/" />
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Open Graph -->
     <meta
       property="og:title"
       content="WordPress Developer | مصمم ومطور مواقع"
@@ -24,42 +27,72 @@
       property="og:description"
       content="مطور وردبريس متخصص في بناء مواقع احترافية وذكية."
     />
-
-    <meta
-      property="og:image"
-      content="https://yahia-ahmed.vercel.app/images/og-image.png"
-    />
+    <meta property="og:image" content="images/og-image.webp" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:image"
-      content="https://yahia-ahmed.vercel.app/images/og-image.png"
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style" />
+    <link
+      rel="preload"
+      href="images/myphoto.webp"
+      as="image"
+      type="image/webp"
+    />
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts & Icons with async loading -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+
+    <!-- No-JS fallback -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
   </head>
 
   <body>
-    <!-- WhatsApp Floating -->
+    <!-- WhatsApp Button -->
     <a
       href="https://wa.me/201206426798"
       class="whatsapp-glow"
       target="_blank"
-      aria-label="Contact on WhatsApp"
+      rel="noopener"
+      aria-label="تواصل عبر واتساب"
     >
       <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Background Glow -->
+    <!-- Background -->
     <div class="bg-glow">
       <div class="glow-circle glow-1"></div>
       <div class="glow-circle glow-2"></div>
@@ -69,15 +102,13 @@
     <nav class="navbar">
       <div class="nav-container">
         <div class="logo">
-          <span style="color: var(--neon-red)">
-            <a href="#home">YA</a>
-          </span>
+          <a href="#home" style="color: var(--neon-red); text-decoration: none"
+            >YA</a
+          >
         </div>
-
-        <button class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="قائمة التنقل">
           <span></span><span></span><span></span>
         </button>
-
         <div class="nav-links" id="navLinks">
           <a href="#home">الرئيسية</a>
           <a href="#about">لماذا أنا؟</a>
@@ -95,33 +126,38 @@
           <div class="name-line">
             <span class="name-outline">WordPress Developer</span>
           </div>
-
           <h1 class="title-highlight">
             موقعك مش مجرد شكل بل أداة تجذب العملاء
           </h1>
-
           <p class="hero-subtitle">
             أصمم مواقع WordPress عملية وسريعة، تركز على تحويل الزوار إلى عملاء
             حقيقيين
           </p>
-
           <div class="hero-buttons">
-            <a href="https://wa.me/201206426798" class="btn btn-neon-red">
-              <i class="fas fa-rocket" style="margin-left: 8px"></i>
+            <a
+              href="https://wa.me/201206426798"
+              class="btn btn-neon-red"
+              rel="noopener"
+            >
+              <i class="fas fa-rocket"></i>
               احصل على موقعك الآن
             </a>
-
-            <a href="#projects" class="btn btn-neon-yellow"> استعرض أعمالي </a>
+            <a href="#projects" class="btn btn-neon-yellow">استعرض أعمالي</a>
           </div>
         </div>
-
         <div class="hero-image">
           <div class="cartoon-container">
-            <img
-              src="images/myphoto.webp"
-              alt="Yahia Ahmed"
-              class="cartoon-img"
-            />
+            <picture>
+              <source srcset="images/myphoto.webp" type="image/webp" />
+              <source srcset="images/myphoto.jpg" type="image/jpeg" />
+              <img
+                src="images/myphoto.jpg"
+                alt="يحيى أحمد - WordPress Developer"
+                width="400"
+                height="400"
+                class="cartoon-img"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -130,40 +166,34 @@
     <!-- About -->
     <section id="about" class="section about-section">
       <h2 class="section-title">أنا لا أبني مواقع… أنا أبني نتائج</h2>
-
       <div class="about-container">
         <div class="about-content">
           <h3 class="about-heading">
             موقعك يجب أن يحقق هدفًا واضحًا: جذب العملاء وتحقيق نتائج حقيقية
           </h3>
-
           <p class="about-text">
             أنا <strong>يحيى أحمد</strong>، أصمم مواقع
             <strong>WordPress</strong> ذكية وسريعة، تركز على تجربة المستخدم
             وتحويل الزائر إلى عميل.
           </p>
-
           <div class="about-features">
             <div class="feature">
-              <i class="fas fa-magnet feature-icon"></i>
+              <i class="fas fa-magnet feature-icon" aria-hidden="true"></i>
               <h4>جذب وتحويل</h4>
               <p>تصميمات مدروسة تقود الزائر لطلب الخدمة بسهولة.</p>
             </div>
-
             <div class="feature">
-              <i class="fas fa-bolt-lightning feature-icon"></i>
+              <i class="fas fa-bolt feature-icon" aria-hidden="true"></i>
               <h4>سرعة تسبق المنافسين</h4>
               <p>مواقع خفيفة وسريعة لأن كل ثانية تأخير = عميل ضائع.</p>
             </div>
-
             <div class="feature">
-              <i class="fas fa-award feature-icon"></i>
+              <i class="fas fa-award feature-icon" aria-hidden="true"></i>
               <h4>ثقة من أول زيارة</h4>
               <p>واجهات احترافية تجعل العميل يشعر أنه في المكان الصحيح.</p>
             </div>
           </div>
         </div>
-
         <div class="about-stats">
           <div class="stat">
             <h3 class="stat-number">10+</h3>
@@ -184,50 +214,56 @@
     <!-- Services -->
     <section id="services" class="section services-section">
       <h2 class="section-title">كيف أساعدك على النمو؟</h2>
-
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="service-icon">
+            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+          </div>
           <h3 class="service-title">مواقع WordPress تخدم أهدافك</h3>
           <p class="service-description">
             مواقع سريعة ومتجاوبة تركز على تحويل الزائر إلى عميل.
           </p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-code"></i></div>
+          <div class="service-icon">
+            <i class="fas fa-code" aria-hidden="true"></i>
+          </div>
           <h3 class="service-title">تخصيص كامل</h3>
           <p class="service-description">
             أحول أي فكرة في موقعك إلى تصميم وكود جاهز للعمل.
           </p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-gauge-high"></i></div>
+          <div class="service-icon">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
           <h3 class="service-title">ظهور أقوى في جوجل</h3>
           <p class="service-description">
             تحسين سرعة الموقع وSEO للوصول للعملاء بسهولة.
           </p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+          </div>
           <h3 class="service-title">تجربة مثالية على كل الأجهزة</h3>
           <p class="service-description">
             موبايل – تابلت – كمبيوتر بنفس القوة والتأثير.
           </p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+          <div class="service-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
           <h3 class="service-title">أمان واستقرار دائم</h3>
           <p class="service-description">
             حماية وصيانة مستمرة ليعمل موقعك بدون قلق.
           </p>
         </div>
-
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-rocket"></i></div>
+          <div class="service-icon">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+          </div>
           <h3 class="service-title">Landing Pages تبيع</h3>
           <p class="service-description">
             صفحات للإعلانات تزيد معدل التحويل لأقصى حد.
@@ -236,26 +272,60 @@
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projects" class="section projects-section">
       <h2 class="section-title">معرض أعمالي</h2>
-
       <div class="projects-grid">
         <div class="project-card">
           <div class="project-img">
+            <div class="project-badge">medical</div>
+            <a href="https://rokn.gt.tc/" target="_blank" rel="noopener">
+              <img
+                src="images/dr-ahmed.webp"
+                alt="موقع طبي"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">عيادة د.احمد السيد</h3>
+            <p class="project-desc">
+              تصميم "Landing Page" احترافية لعيادة طبية، تضمن أقصى سرعة تحميل
+              وأعلى نسبة تحويل للزوار إلى حجوزات فعلية.
+            </p>
+            <div class="tech-stack">
+              <span>Html</span>
+              <span>Css</span>
+              <span>Js</span>
+            </div>
+            <a
+              href="https://dr-alsayed.netlify.app/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
             <div class="project-badge">real estate</div>
-            <a href="https://rokn.gt.tc/" target="_blank">
+            <a href="https://rokn.gt.tc/" target="_blank" rel="noopener">
               <img
                 src="images/real-estate.webp"
-                alt="ركن العقارية"
-                loading="lazy"
+                alt="موقع ركن العقارية"
+                width="600"
+                height="400"
               />
             </a>
           </div>
           <div class="project-content">
             <h3 class="project-title">ركن العقارية</h3>
             <p class="project-desc">
-              منصة عقارية احترافية تساعد العميل على الوصول للعقار المناسب بسهولة
-              مع تجربة تصفح سلسة.
+              منصة عقارية احترافية تساعد العميل على الوصول للعقار المناسب.
             </p>
             <div class="tech-stack">
               <span>Page Builder</span>
@@ -263,56 +333,64 @@
               <span>CSS3</span>
               <span>Acf & Cpt</span>
             </div>
-            <div class="project-footer">
-              <a href="https://rokn.gt.tc/" class="live-btn" target="_blank"
-                >معاينة مباشرة</a
-              >
-            </div>
+            <a
+              href="https://rokn.gt.tc/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
           </div>
         </div>
-
         <div class="project-card">
           <div class="project-img">
             <div class="project-badge">Agency company</div>
-            <a href="https://sola.kesug.com/" target="_blank">
+            <a href="https://sola.kesug.com/" target="_blank" rel="noopener">
               <img
                 src="images/moden-Agency-Website.webp"
-                alt="وكالة Sola"
-                loading="lazy"
+                alt="وكالة Sola الإبداعية"
+                width="600"
+                height="400"
               />
             </a>
           </div>
           <div class="project-content">
             <h3 class="project-title">وكالة Sola الإبداعية</h3>
             <p class="project-desc">
-              واجهة عصرية وأنيميشن ناعم يعكس هوية الوكالة ويزيد التفاعل مع
-              الخدمات المقدمة.
+              واجهة عصرية وأنيميشن ناعم يعكس هوية الوكالة.
             </p>
             <div class="tech-stack">
               <span>Page Builder</span>
               <span>PHP</span>
               <span>CSS Animation</span>
             </div>
-            <div class="project-footer">
-              <a href="https://sola.kesug.com/" class="live-btn" target="_blank"
-                >معاينة مباشرة</a
-              >
-            </div>
+            <a
+              href="https://sola.kesug.com/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
           </div>
         </div>
-
         <div class="project-card">
           <div class="project-img">
             <div class="project-badge">Medical Solution</div>
-            <a href="https://orissa.page.gd/" target="_blank">
-              <img src="images/dental.webp" alt="عيادة أوريسا" loading="lazy" />
+            <a href="https://orissa.page.gd/" target="_blank" rel="noopener">
+              <img
+                src="images/dental.webp"
+                alt="عيادة أوريسا للأسنان"
+                width="600"
+                height="400"
+              />
             </a>
           </div>
           <div class="project-content">
             <h3 class="project-title">عيادة أوريسا للأسنان</h3>
             <p class="project-desc">
-              موقع طبي متكامل يركز على بناء الثقة وتسهيل عملية حجز المواعيد
-              للمرضى أونلاين.
+              موقع طبي متكامل يركز على بناء الثقة وتسهيل الحجز.
             </p>
             <div class="tech-stack">
               <span>Page Builder</span>
@@ -320,21 +398,29 @@
               <span>Booking</span>
               <span>Custom CSS</span>
             </div>
-            <div class="project-footer">
-              <a href="https://orissa.page.gd/" class="live-btn" target="_blank"
-                >معاينة مباشرة</a
-              >
-            </div>
+            <a
+              href="https://orissa.page.gd/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
           </div>
         </div>
-
         <div class="project-card">
           <div class="project-img">
             <div class="project-badge">restaurant</div>
-            <a href="https://elnouery.totalh.net/" target="_blank">
+            <a
+              href="https://elnouery.totalh.net/"
+              target="_blank"
+              rel="noopener"
+            >
               <img
                 src="images/Elnouery-restaurant.webp"
                 alt="مطعم النويري"
+                width="600"
+                height="400"
                 loading="lazy"
               />
             </a>
@@ -342,65 +428,33 @@
           <div class="project-content">
             <h3 class="project-title">مطعم النويري</h3>
             <p class="project-desc">
-              تصميم موقع مطعم سريع، يركز على عرض قائمة الطعام بشكل شهي وسهولة
-              طلب الخدمة.
+              تصميم موقع مطعم سريع، يركز على عرض قائمة الطعام بشكل شهي.
             </p>
             <div class="tech-stack">
               <span>Page Builder</span>
               <span>PHP</span>
               <span>CSS</span>
             </div>
-            <div class="project-footer">
-              <a
-                href="https://elnouery.totalh.net/"
-                class="live-btn"
-                target="_blank"
-                >معاينة مباشرة</a
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-img">
-            <div class="project-badge">E-Learning</div>
-            <a href="#" target="_blank">
-              <img
-                src="images/Elnouery-restaurant.webp"
-                alt="منصة تعليمية"
-                loading="lazy"
-              />
+            <a
+              href="https://elnouery.totalh.net/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
             </a>
-          </div>
-          <div class="project-content">
-            <h3 class="project-title">منصة euclid التعليمية</h3>
-            <p class="project-desc">
-              منصة تعليمية تهدف لتنظيم المحتوى الدراسي وتسهيل الوصول للمحاضرات
-              التفاعلية , مع لوحة تحكم سهلة التنقل.
-            </p>
-            <div class="tech-stack">
-              <span>LMS Content</span>
-              <span>PHP</span>
-              <span>CSS</span>
-            </div>
-            <div class="project-footer">
-              <a
-                href="https://euclid-math.xo.je/"
-                class="live-btn"
-                target="_blank"
-                >معاينة مباشرة</a
-              >
-            </div>
           </div>
         </div>
 
         <div class="project-card">
           <div class="project-img">
             <div class="project-badge">Portfolio</div>
-            <a href="https://ahmed-ali.page.gd/" target="_blank">
+            <a href="https://ahmed-ali.page.gd/" target="_blank" rel="noopener">
               <img
                 src="images/Photographer-portfolio.webp"
                 alt="بورتفليو مصور"
+                width="600"
+                height="400"
                 loading="lazy"
               />
             </a>
@@ -408,8 +462,7 @@
           <div class="project-content">
             <h3 class="project-title">Photographer Portfolio</h3>
             <p class="project-desc">
-              موقع "Minimalist" يركز على جودة الصور وسرعة التحميل لعرض الأعمال
-              الفوتوغرافية باحترافية.
+              موقع "Minimalist" يركز على جودة الصور وسرعة التحميل.
             </p>
             <div class="tech-stack">
               <span>Page Builder</span>
@@ -417,100 +470,84 @@
               <span>Css & Js</span>
               <span>Custom CSS</span>
             </div>
-            <div class="project-footer">
-              <a
-                href="https://ahmed-ali.page.gd/"
-                class="live-btn"
-                target="_blank"
-                >معاينة مباشرة</a
-              >
+            <a
+              href="https://ahmed-ali.page.gd/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">E-Learning</div>
+            <a href="https://euclid-math.xo.je/" target="_blank" rel="noopener">
+              <img
+                src="images/Euclid.webp"
+                alt="منصة تعليمية"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">منصة euclid التعليمية</h3>
+            <p class="project-desc">
+              منصة تعليمية لتنظيم المحتوى الدراسي وتسهيل الوصول للمحاضرات.
+            </p>
+            <div class="tech-stack">
+              <span>LMS Content</span>
+              <span>PHP</span>
+              <span>CSS</span>
             </div>
+            <a
+              href="https://euclid-math.xo.je/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <style>
-      .tech-stack {
-        margin: 15px 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .tech-stack span {
-        background: #050507;
-        color: #ffffff;
-        padding: 4px 10px;
-        border-radius: 4px;
-        font-size: 0.85rem;
-        font-weight: bold;
-        border: 1px solid #ffffff;
-      }
-
-      .project-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-    </style>
-
     <!-- Contact -->
-    <section id="contact" class="contact-section">
-      <h2 class="contact-title">جاهز لتحويل موقعك إلى أداة مبيعات؟</h2>
+    <section id="contact" class="contact-section urgency-section">
+      <div class="limited-offer">
+        <span class="offer-badge">عرض خاص</span>
+        <h2 class="contact-title">تصميم يحول + سرعة تبهر = 📈 مبيعات تزيد</h2>
+      </div>
 
-      <p class="contact-subtitle">
-        إذا كنت تريد موقعًا يعكس احترافك ويجذب العملاء ويبيع بدلًا منك — تواصل
-        معي الآن.
-      </p>
-
-      <a href="https://wa.me/201206426798" class="btn btn-neon-red">
-        <i class="fab fa-whatsapp" style="margin-left: 10px"></i>
-        تواصل معي الآن – الرد سريع
+      <a
+        href="https://wa.me/201055842654"
+        class="btn decision-btn"
+        rel="noopener"
+      >
+        أرسل "عرض" الآن واحصل على خصم 30%
       </a>
 
-      <div class="social-links">
-        <a
-          target="_blank"
-          href="https://wa.me/201206426798"
-          class="social-icon whatsapp"
-        >
-          <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <a
-          target="_blank"
-          href="https://www.behance.net/yahiaahmed29"
-          class="social-icon behance"
-        >
-          <i class="fab fa-behance"></i>
-        </a>
-
-        <a
-          target="_blank"
-          href="https://github.com/Yahia-Ahmed-dev"
-          class="social-icon"
-        >
-          <i class="fab fa-github"></i>
-        </a>
-
-        <a
-          target="_blank"
-          href="https://www.facebook.com/profile.php?id=100071026405607"
-          class="social-icon behance"
-        >
-          <i class="fab fa-facebook"></i>
-        </a>
+      <div class="whats-included">
+        <h3><i class="fas fa-gift"></i> ما تحصل عليه:</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> موقع WordPress كامل</li>
+          <li><i class="fas fa-check"></i> تحسين سرعة + SEO أساسي</li>
+          <li><i class="fas fa-check"></i> تدريب على إدارة الموقع</li>
+          <li><i class="fas fa-check"></i> دعم فني لمدة شهر</li>
+        </ul>
       </div>
     </section>
 
     <footer>
       <div class="copyright">
-        © 2026 يحيى أحمد | WordPress Developer – مواقع عملية تجذب العملاء
+        © <span id="currentYear"></span> Yahia Ahmed | WordPress Developer
       </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="script.js" defer></script>
   </body>
 </html>
