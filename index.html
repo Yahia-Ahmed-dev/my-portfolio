@@ -3,889 +3,551 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>عيادة سمايل | Smile Dental Clinic</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts - Cairo -->
+    <title>يحيى أحمد | WordPress Developer مصمم ومطور مواقع</title>
+
+    <!-- SEO Meta -->
+    <meta
+      name="description"
+      content="يحيى أحمد - WordPress Developer متخصص في إنشاء مواقع عملية وذكية، تجذب العملاء وتزيد المبيعات."
+    />
+    <meta
+      name="keywords"
+      content="WordPress Developer, تصميم مواقع عملية, صفحات هبوط, Elementor, مواقع احترافية"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="WordPress Developer | مصمم ومطور مواقع"
+    />
+    <meta
+      property="og:description"
+      content="مطور وردبريس متخصص في بناء مواقع احترافية وذكية."
+    />
+    <meta property="og:image" content="images/og-image.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style" />
+    <link
+      rel="preload"
+      href="images/myphoto.webp"
+      as="image"
+      type="image/webp"
+    />
+
+    <!-- Preconnect to external domains -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts & Icons with async loading -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      media="print"
+      onload="this.media='all'"
     />
-    <!-- Animate.css for animations -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-   
+
+    <!-- No-JS fallback -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
   </head>
-  <body class="bg-[#f8fafc] text-gray-800" dir="rtl">
-    <!-- Navbar -->
-    <nav
-      id="navbar"
-      class="fixed top-0 right-0 w-full z-50 py-4 bg-transparent transition-all duration-300"
+
+  <body>
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/201206426798"
+      class="whatsapp-glow"
+      target="_blank"
+      rel="noopener"
+      aria-label="تواصل عبر واتساب"
     >
-    <div class="max-w-[1200px] mx-auto px-4 md:px-8"></div>
-        <div class="flex justify-around items-center">
-          <!-- Logo -->
-          <div
-            class="flex items-center space-x-2 space-x-reverse"
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Background -->
+    <div class="bg-glow">
+      <div class="glow-circle glow-1"></div>
+      <div class="glow-circle glow-2"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#home" style="color: var(--neon-red); text-decoration: none"
+            >YA</a
           >
-            <div
-              class="w-10 h-10 bg-[#0077b6] rounded-full flex items-center justify-center 0"
-            >
-              <i class="fas fa-tooth text-white text-xl"></i>
-            </div>
-            <div>
-              <h1 class="text-xl font-bold text-[#0077b6]">عيادة سمايل</h1>
-              <p class="text-xs text-gray-500">Smile Dental Clinic</p>
-            </div>
-          </div>
-
-          <!-- Desktop Menu -->
-          <div class="hidden md:flex items-center space-x-8 space-x-reverse">
-            <a
-              href="#home"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors 0"
-              >الرئيسية</a
-            >
-            <a
-              href="#services"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors 0"
-              >خدماتنا</a
-            >
-            <a
-              href="#features"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors 0"
-              >مميزاتنا</a
-            >
-            <a
-              href="#before-after"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors 0"
-              >قبل وبعد</a
-            >
-            <a
-              href="#testimonials"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors 0"
-              >آراء العملاء</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors 0"
-              >اتصل بنا</a
-            >
-          </div>
-
-          <!-- Book Now Button -->
-          <button
-            id="bookNowNav"
-            class="bg-[#0077b6] hover:bg-blue-700 text-white font-medium py-2.5 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg 0 animate__animated animate__fadeInDown"
-          >
-            <i class="fas fa-calendar-check ml-2"></i>
-            احجز موعد
-          </button>
-
-          <!-- Mobile Menu Button -->
-          <button id="mobileMenuButton" class="md:hidden text-gray-700">
-            <i class="fas fa-bars text-xl"></i>
-          </button>
         </div>
-
-        <!-- Mobile Menu -->
-        <div
-          id="mobileMenu"
-          class="hidden md:hidden mt-4 pb-4 border-t border-gray-200 pt-4"
-        >
-          <div class="flex flex-col space-y-4">
-            <a
-              href="#home"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors"
-              >الرئيسية</a
-            >
-            <a
-              href="#services"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors"
-              >خدماتنا</a
-            >
-            <a
-              href="#features"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors"
-              >مميزاتنا</a
-            >
-            <a
-              href="#before-after"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors"
-              >قبل وبعد</a
-            >
-            <a
-              href="#testimonials"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors"
-              >آراء العملاء</a
-            >
-            <a
-              href="#contact"
-              class="text-gray-700 hover:text-[#0077b6] font-medium transition-colors"
-              >اتصل بنا</a
-            >
-          </div>
+        <button class="hamburger" id="hamburger" aria-label="قائمة التنقل">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">الرئيسية</a>
+          <a href="#about">لماذا أنا؟</a>
+          <a href="#services">خدماتي</a>
+          <a href="#projects">أعمالي</a>
+          <a href="#contact">تواصل معي</a>
         </div>
       </div>
     </nav>
 
-    <!-- Hero Section - NEW DESIGN -->
-    <section id="home" class="pt-16 md:pt-20">
-      <div class="relative overflow-hidden">
-        <div class="hero-gradient">
-              <div class="max-w-[1200px] mx-auto px-4 md:px-8">
-
-        <div class="flex flex-col lg:flex-row items-center min-h-[80vh] lg:min-h-[90vh] gap-12 lg:gap-16">      
-              <!-- Hero Content -->
-                <div class="lg:w-1/2 py-12 lg:py-0 text-white z-10 mx-auto ">
-                <!-- Ministry of Health Badge -->
-                <div
-                  class="flex items-center mb-6 animate__animated animate__fadeInLeft"
-                >
-                  <div
-                    class="hero-badge rounded-full px-4 py-2 flex items-center space-x-2 space-x-reverse"
-                  >
-                    <i class="fas fa-shield-alt text-white"></i>
-                    <span class="text-sm font-medium">مقدمو وزارة الصحة</span>
-                  </div>
-                </div>
-
-                <!-- Certified Text -->
-                <div
-                  class="mb-8 animate__animated animate__fadeInLeft animate__delay-0.5s"
-                >
-                  <div class="flex items-center space-x-2 space-x-reverse mb-4">
-                    <div class="w-8 h-[2px] bg-white"></div>
-                    <p class="text-lg text-white/90">
-                      عبارة معتمدة من وزارة الصحة
-                    </p>
-                  </div>
-
-                  <!-- Main Headline -->
-                  <h1
-                    class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate__animated animate__fadeInLeft"
-                  >
-                    ابتسامتك هي
-                    <span class="text-yellow-300 animate-pulse">سر ثقتك</span>
-                  </h1>
-
-                  <!-- Sub Headline -->
-                  <p
-                    class="text-xl text-white/90 mb-8 leading-relaxed animate__animated animate__fadeInLeft animate__delay-0.8s"
-                  >
-                    نقدم لك أفضل خدمات طب الأسنان بأحدث التقنيات العالمية وبأيدي
-                    فريق طبي متخصص لضمان ابتسامة صحية ومشرقة
-                  </p>
-                </div>
-
-                <!-- Call to Action -->
-                <div class="mb-12">
-                  <div
-                    class="flex items-center space-x-2 space-x-reverse mb-6"
-                  >
-                    <i class="fas fa-star text-yellow-300"></i>
-                    <h3 class="text-2xl font-bold">ابتسامة صحية تبدأ من هنا</h3>
-                  </div>
-
-                  <div class="flex flex-wrap gap-4">
-                    <button
-                      id="bookNowHero"
-                      class="bg-white hover:bg-gray-100 text-[#0077b6] font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg pulse-cta 0"
-                    >
-                      <i class="fas fa-calendar-check ml-2"></i>
-                      احجز موعدك الآن
-                    </button>
-                    <a
-                      href="#services"
-                      class="bg-transparent hover:bg-white/10 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-white text-lg 0"
-                    >
-                      استكشف خدماتنا
-                    </a>
-                  </div>
-                </div>
-
-                <!-- Stats Cards -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
-                  <div
-                    class="stats-card rounded-xl p-4 text-center 0 "
-                  >
-                    <div class="flex items-center justify-center mb-2">
-                      <i
-                        class="fas fa-star text-yellow-400 text-xl ml-2"
-                      ></i>
-                      <h3 class="text-2xl font-bold text-[#0077b6]">4.9</h3>
-                    </div>
-                    <p class="text-gray-600 text-sm">تقييم</p>
-                  </div>
-
-                  <div
-                    class="stats-card rounded-xl p-4 text-center 0"
-                  >
-                    <h3 class="text-2xl font-bold text-[#0077b6]">5000+</h3>
-                    <p class="text-gray-600 text-sm">مريض سعيد</p>
-                  </div>
-
-                  <div
-                    class="stats-card rounded-xl p-4 text-center 0"
-                  >
-                    <h3 class="text-2xl font-bold text-[#0077b6]">15+</h3>
-                    <p class="text-gray-600 text-sm">سنة خبرة</p>
-                  </div>
-
-                  <div
-                    class="stats-card rounded-xl p-4 text-center 0"
-                  >
-                    <h3 class="text-2xl font-bold text-[#0077b6]">98%</h3>
-                    <p class="text-gray-600 text-sm">رضا العملاء</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Hero Image with 3D Effect -->
-        <div class="lg:w-1/2 relative h-[400px] lg:h-[500px]">
-  <!-- Background Gradient Behind Image -->
-  <div class="absolute -inset-6 bg-gradient-to-r from-blue-400/30 via-blue-500/20 to-blue-600/10 rounded-3xl blur-xl transform -translate-z-10"></div>
-  
-  <!-- Glowing Border Container -->
-  <div class="relative h-full w-full group">
-    <!-- Glowing Border -->
-    <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 via-blue-400 to-purple-500 rounded-3xl blur opacity-30 group-hover:opacity-70 transition duration-500 group-hover:scale-105"></div>
-    
-    <!-- Main Image Container with 3D Effect -->
-    <div class="image-3d-advanced relative h-full w-full rounded-2xl overflow-hidden shadow-2xl">
-      <img 
-        src="images/dr.webp" 
-        alt="طبيب أسنان محترف" 
-        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-      />
-                  <img
-                    src="images/dr.webp"
-                    alt="طبيب أسنان محترف"
-                    class="w-full h-full object-cover"
-                  />
-                  <!-- Overlay for text on image -->
-                  <div
-                    class="absolute bottom-0 right-0 p-6 lg:p-8 text-white lg:text-right"
-                  >
-                    <h3
-                      class="text-xl lg:text-2xl font-bold mb-2"
-                    >
-                      أفضل رعاية لصحة أسنانك
-                    </h3>
-                    <p
-                      class="text-white/90"
-                    >
-                      بتقنيات عالمية وأطباء معتمدين
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="name-line">
+            <span class="name-outline">WordPress Developer</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="py-16 bg-white">
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 """
-          >
-            لماذا تختار عيادة سمايل؟
-          </h2>
-          <p
-            class="text-gray-600 max-w-2xl mx-auto "
-          >
-            نقدم لكم خدمات طب الأسنان بأعلى معايير الجودة والاحترافية
+          <h1 class="title-highlight">
+            موقعك مش مجرد شكل بل أداة تجذب العملاء
+          </h1>
+          <p class="hero-subtitle">
+            أصمم مواقع WordPress عملية وسريعة، تركز على تحويل الزوار إلى عملاء
+            حقيقيين
           </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Feature 1 -->
-          <div
-            class="bg-[#f8fafc] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center 0 "
-          >
-            <div
-              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 0"
+          <div class="hero-buttons">
+            <a
+              href="https://wa.me/201206426798"
+              class="btn btn-neon-red"
+              rel="noopener"
             >
-              <i class="fas fa-microscope text-[#0077b6] text-3xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">أحدث التقنيات</h3>
-            <p class="text-gray-600">
-              نستخدم أحدث المعدات والتقنيات الطبية العالمية في جميع علاجاتنا
-              لضمان أفضل النتائج
-            </p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div
-            class="bg-[#f8fafc] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center 0 "
-          >
-            <div
-              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 0"
-            >
-              <i class="fas fa-shield-alt text-[#0077b6] text-3xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">تعقيم 100%</h3>
-            <p class="text-gray-600">
-              نتبع أعلى معايير النظافة والتعقيم لضمان سلامة المرضى ومنع انتقال
-              العدوى
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div
-            class="bg-[#f8fafc] p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 text-center 0  animate__delay-2s"
-          >
-            <div
-              class="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6 0"
-            >
-              <i class="fas fa-user-md text-[#0077b6] text-3xl"></i>
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">فريق متخصص</h3>
-            <p class="text-gray-600">
-              فريقنا الطبي من أفضل أطباء الأسنان المتخصصين والحاصلين على شهادات
-              عالمية
-            </p>
+              <i class="fas fa-rocket"></i>
+              احصل على موقعك الآن
+            </a>
+            <a href="#projects" class="btn btn-neon-yellow">استعرض أعمالي</a>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section
-      id="services"
-      class="py-16 bg-gradient-to-b from-white to-[#f8fafc]"
-    >
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 "
-          >
-            خدماتنا المتخصصة
-          </h2>
-          <p
-            class="text-gray-600 max-w-2xl mx-auto  animate__delay-1s"
-          >
-            نقدم مجموعة واسعة من خدمات طب الأسنان لتلبية جميع احتياجاتكم
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Service 1 -->
-          <div
-            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 0 "
-          >
-            <div
-              class="h-56 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden relative"
-            >
-              <div class="w-full h-full flex items-center justify-center">
-                <i
-                  class="fas fa-tooth text-[#0077b6] text-6xl 0"
-                ></i>
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold text-gray-800 mb-4">
-                زراعة الأسنان
-              </h3>
-              <p class="text-gray-600 mb-6">
-                حل دائم ومثالي لاستبدال الأسنان المفقودة باستخدام أحدث تقنيات
-                الزراعة
-              </p>
-              <button
-                class="text-[#0077b6] font-bold hover:text-blue-700 transition-colors 0"
-              >
-                تعرف على المزيد <i class="fas fa-arrow-left mr-2"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Service 2 -->
-          <div
-            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 0  animate__delay-1s"
-          >
-            <div
-              class="h-56 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden"
-            >
-              <div class="w-full h-full flex items-center justify-center">
-                <i
-                  class="fas fa-teeth text-[#0077b6] text-6xl 0"
-                ></i>
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold text-gray-800 mb-4">
-                تقويم الأسنان
-              </h3>
-              <p class="text-gray-600 mb-6">
-                علاج مشاكل اصطفاف الأسنان والفكين باستخدام أحدث أنواع التقويم
-                الشفاف والثابت
-              </p>
-              <button
-                class="text-[#0077b6] font-bold hover:text-blue-700 transition-colors 0"
-              >
-                تعرف على المزيد <i class="fas fa-arrow-left mr-2"></i>
-              </button>
-            </div>
-          </div>
-
-          <!-- Service 3 -->
-          <div
-            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 0"
-          >
-            <div
-              class="h-56 bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden"
-            >
-              <div class="w-full h-full flex items-center justify-center">
-                <i
-                  class="fas fa-smile text-[#0077b6] text-6xl"
-                ></i>
-              </div>
-            </div>
-            <div class="p-8">
-              <h3 class="text-xl font-bold text-gray-800 mb-4">
-                تبييض الأسنان
-              </h3>
-              <p class="text-gray-600 mb-6">
-                احصل على ابتسامة أكثر إشراقًا وبياضًا بأحدث تقنيات التبييض
-                الآمنة والفعالة
-              </p>
-              <button
-                class="text-[#0077b6] font-bold hover:text-blue-700 transition-colors 0"
-              >
-                تعرف على المزيد <i class="fas fa-arrow-left mr-2"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Before & After Section -->
-    <section id="before-after" class="py-16 bg-white">
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
-          >
-            قبل وبعد
-          </h2>
-          <p
-            class="text-gray-600 max-w-2xl mx-auto"
-          >
-            شاهد نتائج علاجاتنا الحقيقية من خلال صور حالات قبل وبعد العلاج
-          </p>
-        </div>
-
-        <div class="max-w-4xl mx-auto">
-          <div class="comparison-container 0" id="comparisonContainer">
-            <!-- After image (full width) -->
-            <img loading="lazy"
-              src="images/before.webp"
-              class="comparison-image comparison-after"
-            />
-
-            <!-- Labels -->
-            <div
-              class="comparison-label after-label"
-            >
-              قبل العلاج
-            </div>
-            <div
-              class="comparison-label before-label"
-            >
-              بعد العلاج
-            </div>
-          </div>
-
-          <div class="text-center mt-8">
-            <p class="text-gray-600">
-              حالة تقويم أسنان - نتيجة بعد 18 شهرًا من العلاج
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section
-      id="testimonials"
-      class="py-16 bg-gradient-to-b from-[#f8fafc] to-white"
-    >
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="text-center mb-12">
-          <h2
-            class="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
-          >
-            آراء عملائنا
-          </h2>
-          <p
-            class="text-gray-600 max-w-2xl mx-auto"
-          >
-            ماذا يقول مرضانا عن تجربتهم مع عيادة سمايل
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Testimonial 1 -->
-          <div
-            class="testimonial-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 0 "
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center 0"
-              >
-                <span class="text-[#0077b6] font-bold text-xl">م</span>
-              </div>
-              <div class="mr-4">
-                <h4 class="font-bold text-gray-800">محمد أحمد</h4>
-                <p class="text-gray-500 text-sm">زراعة أسنان</p>
-              </div>
-              <div class="text-yellow-400 mr-auto">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p class="text-gray-600 italic">
-              "تجربة رائعة من البداية للنهاية. الفريق الطبي محترف جدًا والنتيجة
-              تجاوزت توقعاتي. أشكر عيادة سمايل على الاهتمام والرعاية."
-            </p>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div
-            class="testimonial-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 0  0__delay-1s"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center 0"
-              >
-                <span class="text-[#0077b6] font-bold text-xl">س</span>
-              </div>
-              <div class="mr-4">
-                <h4 class="font-bold text-gray-800">سارة محمود</h4>
-                <p class="text-gray-500 text-sm">تقويم أسنان</p>
-              </div>
-              <div class="text-yellow-400 mr-auto">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p class="text-gray-600 italic">
-              "كنت أخاف من زيارة طبيب الأسنان، لكن فريق عيادة سمايل جعل التجربة
-              سهلة ومريحة. النتيجة رائعة وأنا سعيدة جدًا بابتسامتي الجديدة."
-            </p>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div
-            class="testimonial-card bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 0  0__delay-2s"
-          >
-            <div class="flex items-center mb-6">
-              <div
-                class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center 0"
-              >
-                <span class="text-[#0077b6] font-bold text-xl">ع</span>
-              </div>
-              <div class="mr-4">
-                <h4 class="font-bold text-gray-800">علي حسن</h4>
-                <p class="text-gray-500 text-sm">تبييض أسنان</p>
-              </div>
-              <div class="text-yellow-400 mr-auto">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-              </div>
-            </div>
-            <p class="text-gray-600 italic">
-              "خدمة ممتازة ونتيجة رائعة لتبييض الأسنان. الفريق متعاون ويشرح كل
-              خطوة قبل القيام بها. أنصح الجميع بتجربة عيادة سمايل."
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Booking Form Section -->
-    <section id="booking" class="py-16 bg-white">
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="max-w-2xl mx-auto">
-          <div class="text-center mb-12">
-            <h2
-              class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 "
-            >
-              احجز موعدك دلوقتي
-            </h2>
-            <p
-              class="text-gray-600  0__delay-1s"
-            >
-              املأ النموذج وسنتصل بك لتأكيد الموعد
-            </p>
-          </div>
-
-          <form
-            id="bookingForm"
-            class="bg-[#f8fafc] p-8 rounded-2xl shadow-lg"
-          >
-            <div class="mb-6">
-              <label
-                for="patientName"
-                class="block text-gray-700 font-medium mb-2"
-                >الاسم الكامل *</label
-              >
-              <input
-                type="text"
-                id="patientName"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0077b6] transition-colors"
+        <div class="hero-image">
+          <div class="cartoon-container">
+            <picture>
+              <source srcset="images/myphoto.webp" type="image/webp" />
+              <source srcset="images/myphoto.jpg" type="image/jpeg" />
+              <img
+                src="images/myphoto.jpg"
+                alt="يحيى أحمد - WordPress Developer"
+                width="400"
+                height="400"
+                class="cartoon-img"
               />
-              <div id="nameError" class="text-red-500 text-sm mt-2 hidden">
-                يرجى إدخال الاسم الكامل
-              </div>
-            </div>
-
-                      <div class="mb-6">
-              <label
-                for="patientName"
-                class="block text-gray-700 font-medium mb-2"
-                >العمر / السن*</label
-              >
-              <input
-                type="number"
-                id="patientAge"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0077b6] transition-colors 0"
-              />
-              <div id="ageError" class="text-red-500 text-sm mt-2 hidden">
-                يرجى إدخال السن او العمر
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <label
-                for="patientPhone"
-                class="block text-gray-700 font-medium mb-2"
-                >رقم الهاتف *</label
-              >
-              <input
-                type="tel"
-                id="patientPhone"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0077b6] transition-colors 0"
-                placeholder="01XXXXXXXXX"
-              />
-              <div id="phoneError" class="text-red-500 text-sm mt-2 hidden">
-                يرجى إدخال رقم هاتف صحيح
-              </div>
-            </div>
-
-            <div class="mb-6">
-              <label for="service" class="block text-gray-700 font-medium mb-2"
-                >الخدمة المطلوبة *</label
-              >
-              <select
-                id="service"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0077b6] transition-colors 0"
-              >
-                <option value="" selected disabled>اختر الخدمة</option>
-                <option value="زراعة الأسنان">زراعة الأسنان</option>
-                <option value="تقويم الأسنان">تقويم الأسنان</option>
-                <option value="تبييض الأسنان">تبييض الأسنان</option>
-                <option value="حشو وعلاج الجذور">حشو وعلاج الجذور</option>
-                <option value="خلع الأسنان">خلع الأسنان</option>
-                <option value="تنظيف الأسنان">تنظيف الأسنان</option>
-                <option value="فحص واستشارة">فحص واستشارة</option>
-              </select>
-              <div id="serviceError" class="text-red-500 text-sm mt-2 hidden">
-                يرجى اختيار الخدمة المطلوبة
-              </div>
-            </div>
-
-            <div class="mb-8">
-              <label
-                for="appointmentDate"
-                class="block text-gray-700 font-medium mb-2"
-                >ميعاد الحجز*</label
-              >
-              <input
-                type="date"
-                id="appointmentDate"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-[#0077b6] transition-colors 0"
-              />
-              <div id="dateError" class="text-red-500 text-sm mt-2 hidden">
-                يرجى اختيار تاريخ للموعد
-              </div>
-            </div>
-
-            <button
-              type="submit"
-              class="w-full bg-[#0077b6] hover:bg-blue-700 text-white font-bold py-3.5 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg 0 pulse-cta"
-            >
-              <i class="fab fa-whatsapp ml-2"></i>
-              احجز عبر واتساب
-            </button>
-
-            <p class="text-gray-500 text-sm text-center mt-4">
-              بالضغط على الزر سيتم فتح محادثة واتساب مع العيادة تحتوي على
-              بياناتك
-            </p>
-          </form>
+            </picture>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="contact" class="bg-gray-900 text-white pt-16 pb-8">
-      <div class="container mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-          <!-- Clinic Info -->
-          <div class="">
-            <div class="flex items-center space-x-2 space-x-reverse mb-6">
-              <div
-                class="w-12 h-12 bg-[#0077b6] rounded-full flex items-center justify-center 0"
-              >
-                <i class="fas fa-tooth text-white text-xl"></i>
-              </div>
-              <div>
-                <h2 class="text-2xl font-bold">عيادة سمايل</h2>
-                <p class="text-gray-300 text-sm">Smile Dental Clinic</p>
-              </div>
+    <!-- About -->
+    <section id="about" class="section about-section">
+      <h2 class="section-title">أنا لا أبني مواقع… أنا أبني نتائج</h2>
+      <div class="about-container">
+        <div class="about-content">
+          <h3 class="about-heading">
+            موقعك يجب أن يحقق هدفًا واضحًا: جذب العملاء وتحقيق نتائج حقيقية
+          </h3>
+          <p class="about-text">
+            أنا <strong>يحيى أحمد</strong>، أصمم مواقع
+            <strong>WordPress</strong> ذكية وسريعة، تركز على تجربة المستخدم
+            وتحويل الزائر إلى عميل.
+          </p>
+          <div class="about-features">
+            <div class="feature">
+              <i class="fas fa-magnet feature-icon" aria-hidden="true"></i>
+              <h4>جذب وتحويل</h4>
+              <p>تصميمات مدروسة تقود الزائر لطلب الخدمة بسهولة.</p>
             </div>
-            <p class="text-gray-300 mb-6">
-              عيادة سمايل تقدم أفضل خدمات طب الأسنان في مصر بأعلى معايير الجودة
-              والاحترافية، باستخدام أحدث التقنيات العالمية.
-            </p>
-            <div class="flex space-x-4 space-x-reverse">
-              <a
-                href="#"
-                class="w-10 h-10 bg-gray-800 hover:bg-[#0077b6] rounded-full flex items-center justify-center transition-colors 0"
-              >
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-gray-800 hover:bg-[#0077b6] rounded-full flex items-center justify-center transition-colors 0"
-              >
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-gray-800 hover:bg-[#0077b6] rounded-full flex items-center justify-center transition-colors 0"
-              >
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a
-                href="#"
-                class="w-10 h-10 bg-gray-800 hover:bg-[#0077b6] rounded-full flex items-center justify-center transition-colors hover-lift"
-              >
-                <i class="fab fa-whatsapp"></i>
-              </a>
+            <div class="feature">
+              <i class="fas fa-bolt feature-icon" aria-hidden="true"></i>
+              <h4>سرعة تسبق المنافسين</h4>
+              <p>مواقع خفيفة وسريعة لأن كل ثانية تأخير = عميل ضائع.</p>
             </div>
-          </div>
-
-          <!-- Contact Info -->
-          <div class=" 0__delay-1s">
-            <h3 class="text-xl font-bold mb-6">معلومات التواصل</h3>
-            <div class="space-y-4">
-              <div class="flex items-start hover-lift">
-                <i class="fas fa-map-marker-alt text-[#0077b6] mt-1 ml-3"></i>
-                <div>
-                  <p class="font-medium">العنوان</p>
-                  <p class="text-gray-300">
-                    123 شارع التحرير، الدقي، الجيزة، مصر
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-center hover-lift">
-                <i class="fas fa-phone text-[#0077b6] ml-3"></i>
-                <div>
-                  <p class="font-medium">رقم الهاتف</p>
-                  <p class="text-gray-300">+201150154835</p>
-                </div>
-              </div>
-              <div class="flex items-center hover-lift">
-                <i class="fas fa-envelope text-[#0077b6] ml-3"></i>
-                <div>
-                  <p class="font-medium">البريد الإلكتروني</p>
-                  <p class="text-gray-300">info@smileclinic.com</p>
-                </div>
-              </div>
-              <div class="flex items-center 0">
-                <i class="fas fa-clock text-[#0077b6] ml-3"></i>
-                <div>
-                  <p class="font-medium">ساعات العمل</p>
-                  <p class="text-gray-300">
-                    الأحد - الخميس: 9 صباحًا - 9 مساءً<br />الجمعة - السبت: 10
-                    صباحًا - 6 مساءً
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Map Placeholder -->
-          <div class=" 0__delay-2s">
-            <h3 class="text-xl font-bold mb-6">موقع العيادة</h3>
-            <div class="bg-gray-800 h-64 rounded-xl overflow-hidden 0">
-              <!-- Egyptian Map Placeholder -->
-              <div
-                class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-900 relative"
-              >
-                <div
-                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                >
-                  <div
-                    class="w-32 h-32 bg-blue-900/30 rounded-full flex items-center justify-center"
-                  >
-                    <div
-                      class="w-20 h-20 bg-[#0077b6] rounded-full flex items-center justify-center 0"
-                    >
-                      <i class="fas fa-map-marker-alt text-white text-2xl"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="text-center z-10">
-                  <p class="font-bold mb-2">موقع العيادة في مصر</p>
-                  <p class="text-gray-300 text-sm">الجيزة، الدقي</p>
-                </div>
-              </div>
+            <div class="feature">
+              <i class="fas fa-award feature-icon" aria-hidden="true"></i>
+              <h4>ثقة من أول زيارة</h4>
+              <p>واجهات احترافية تجعل العميل يشعر أنه في المكان الصحيح.</p>
             </div>
           </div>
         </div>
+        <div class="about-stats">
+          <div class="stat">
+            <h3 class="stat-number">10+</h3>
+            <p class="stat-text">مشاريع ناجحة</p>
+          </div>
+          <div class="stat">
+            <h3 class="stat-number">100%</h3>
+            <p class="stat-text">تركيز على النتائج</p>
+          </div>
+          <div class="stat">
+            <h3 class="stat-number">24 ساعة</h3>
+            <p class="stat-text">جاهز للتواصل</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Copyright -->
-        <div class="pt-8 border-t border-gray-800 text-center">
-          <p class="text-gray-400">
-            © 2023 عيادة سمايل لطب الأسنان. جميع الحقوق محفوظة.
+    <!-- Services -->
+    <section id="services" class="section services-section">
+      <h2 class="section-title">كيف أساعدك على النمو؟</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">مواقع WordPress تخدم أهدافك</h3>
+          <p class="service-description">
+            مواقع سريعة ومتجاوبة تركز على تحويل الزائر إلى عميل.
           </p>
         </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">تخصيص كامل</h3>
+          <p class="service-description">
+            أحول أي فكرة في موقعك إلى تصميم وكود جاهز للعمل.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">ظهور أقوى في جوجل</h3>
+          <p class="service-description">
+            تحسين سرعة الموقع وSEO للوصول للعملاء بسهولة.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">تجربة مثالية على كل الأجهزة</h3>
+          <p class="service-description">
+            موبايل – تابلت – كمبيوتر بنفس القوة والتأثير.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">أمان واستقرار دائم</h3>
+          <p class="service-description">
+            حماية وصيانة مستمرة ليعمل موقعك بدون قلق.
+          </p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-title">Landing Pages تبيع</h3>
+          <p class="service-description">
+            صفحات للإعلانات تزيد معدل التحويل لأقصى حد.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects-section">
+      <h2 class="section-title">معرض أعمالي</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">medical</div>
+            <a href="https://rokn.gt.tc/" target="_blank" rel="noopener">
+              <img
+                src="images/dr-ahmed.webp"
+                alt="موقع طبي"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">عيادة د.احمد السيد</h3>
+            <p class="project-desc">
+              تصميم "Landing Page" احترافية لعيادة طبية، تضمن أقصى سرعة تحميل
+              وأعلى نسبة تحويل للزوار إلى حجوزات فعلية.
+            </p>
+            <div class="tech-stack">
+              <span>Html</span>
+              <span>Css</span>
+              <span>Js</span>
+            </div>
+            <a
+              href="https://dr-alsayed.netlify.app/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">real estate</div>
+            <a href="https://rokn.gt.tc/" target="_blank" rel="noopener">
+              <img
+                src="images/real-estate.webp"
+                alt="موقع ركن العقارية"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">ركن العقارية</h3>
+            <p class="project-desc">
+              منصة عقارية احترافية تساعد العميل على الوصول للعقار المناسب.
+            </p>
+            <div class="tech-stack">
+              <span>Page Builder</span>
+              <span>PHP</span>
+              <span>CSS3</span>
+              <span>Acf & Cpt</span>
+            </div>
+            <a
+              href="https://rokn.gt.tc/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">Agency company</div>
+            <a href="https://sola.kesug.com/" target="_blank" rel="noopener">
+              <img
+                src="images/moden-Agency-Website.webp"
+                alt="وكالة Sola الإبداعية"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">وكالة Sola الإبداعية</h3>
+            <p class="project-desc">
+              واجهة عصرية وأنيميشن ناعم يعكس هوية الوكالة.
+            </p>
+            <div class="tech-stack">
+              <span>Page Builder</span>
+              <span>PHP</span>
+              <span>CSS Animation</span>
+            </div>
+            <a
+              href="https://sola.kesug.com/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">Medical Solution</div>
+            <a href="https://orissa.page.gd/" target="_blank" rel="noopener">
+              <img
+                src="images/dental.webp"
+                alt="عيادة أوريسا للأسنان"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">عيادة أوريسا للأسنان</h3>
+            <p class="project-desc">
+              موقع طبي متكامل يركز على بناء الثقة وتسهيل الحجز.
+            </p>
+            <div class="tech-stack">
+              <span>Page Builder</span>
+              <span>PHP</span>
+              <span>Booking</span>
+              <span>Custom CSS</span>
+            </div>
+            <a
+              href="https://orissa.page.gd/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">restaurant</div>
+            <a
+              href="https://elnouery.totalh.net/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/Elnouery-restaurant.webp"
+                alt="مطعم النويري"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">مطعم النويري</h3>
+            <p class="project-desc">
+              تصميم موقع مطعم سريع، يركز على عرض قائمة الطعام بشكل شهي.
+            </p>
+            <div class="tech-stack">
+              <span>Page Builder</span>
+              <span>PHP</span>
+              <span>CSS</span>
+            </div>
+            <a
+              href="https://elnouery.totalh.net/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">Portfolio</div>
+            <a href="https://ahmed-ali.page.gd/" target="_blank" rel="noopener">
+              <img
+                src="images/Photographer-portfolio.webp"
+                alt="بورتفليو مصور"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Photographer Portfolio</h3>
+            <p class="project-desc">
+              موقع "Minimalist" يركز على جودة الصور وسرعة التحميل.
+            </p>
+            <div class="tech-stack">
+              <span>Page Builder</span>
+              <span>PHP</span>
+              <span>Css & Js</span>
+              <span>Custom CSS</span>
+            </div>
+            <a
+              href="https://ahmed-ali.page.gd/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">E-Learning</div>
+            <a href="https://euclid-math.xo.je/" target="_blank" rel="noopener">
+              <img
+                src="images/Euclid.webp"
+                alt="منصة تعليمية"
+                width="600"
+                height="400"
+                loading="lazy"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">منصة euclid التعليمية</h3>
+            <p class="project-desc">
+              منصة تعليمية لتنظيم المحتوى الدراسي وتسهيل الوصول للمحاضرات.
+            </p>
+            <div class="tech-stack">
+              <span>LMS Content</span>
+              <span>PHP</span>
+              <span>CSS</span>
+            </div>
+            <a
+              href="https://euclid-math.xo.je/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة مباشرة
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section urgency-section">
+      <div class="limited-offer">
+        <span class="offer-badge">عرض خاص</span>
+        <h2 class="contact-title">تصميم يحول + سرعة تبهر = 📈 مبيعات تزيد</h2>
+      </div>
+
+      <a
+        href="https://wa.me/201055842654"
+        class="btn decision-btn"
+        rel="noopener"
+      >
+        أرسل "عرض" الآن واحصل على خصم 30%
+      </a>
+
+      <div class="whats-included">
+        <h3><i class="fas fa-gift"></i> ما تحصل عليه:</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> موقع WordPress كامل</li>
+          <li><i class="fas fa-check"></i> تحسين سرعة + SEO أساسي</li>
+          <li><i class="fas fa-check"></i> تدريب على إدارة الموقع</li>
+          <li><i class="fas fa-check"></i> دعم فني لمدة شهر</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="copyright">
+        © <span id="currentYear"></span> Yahia Ahmed | WordPress Developer
       </div>
     </footer>
-
-    <!-- JavaScript -->
     <script src="script.js" defer></script>
   </body>
 </html>
