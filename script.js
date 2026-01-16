@@ -97,3 +97,72 @@ const animateCounters = () => {
 document.addEventListener("DOMContentLoaded", () => {
   animateCounters();
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. أنيميشن ظهور العناصر (Intersection Observer)
+  const appearanceObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible"); // نستخدم كلاس بدلاً من تغيير الـ style مباشرة
+          appearanceObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  // تحديد كل العناصر التي نريدها أن تظهر تدريجياً
+  const animatedElements = document.querySelectorAll(
+    ".project-card, .service-card, .section-title, .feature, .stat, .about-section"
+  );
+
+  animatedElements.forEach((el) => {
+    el.classList.add("reveal-on-scroll"); // نعطيها الخصائص المبدئية (مختفية)
+    appearanceObserver.observe(el);
+  });
+
+  // 2. تشغيل العدادات
+  animateCounters();
+});
+
+// دالة العداد
+function animateCounters() {
+  const counters = document.querySelectorAll(".stat-number");
+  counters.forEach((counter) => {
+    const target = parseInt(
+      counter.getAttribute("data-target") || counter.innerText
+    );
+    let current = 0;
+    const increment = target / 30;
+
+    const update = () => {
+      if (current < target) {
+        current += increment;
+        counter.innerText = Math.ceil(current) + "+";
+        setTimeout(update, 50);
+      } else {
+        counter.innerText = target + "+";
+      }
+    };
+
+    new IntersectionObserver((entries, observer) => {
+      if (entries[0].isIntersecting) {
+        update();
+        observer.disconnect();
+      }
+    }).observe(counter);
+  });
+}
+
+// تحديث السنة
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+// قائمة الموبايل
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("open");
+  navLinks.classList.toggle("active"); // أضف تنسيق active في CSS ليظهر القائمة
+});
