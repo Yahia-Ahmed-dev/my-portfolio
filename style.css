@@ -396,6 +396,9 @@ body {
   padding: 35px;
   max-width: 1300px;
   margin: 0 auto;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .section-title {
@@ -1196,6 +1199,11 @@ footer {
   .contact-section {
     padding: 40px 20px;
     margin: 30px 20px;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    z-index: 10;
   }
 
   .btn {
@@ -1580,4 +1588,10 @@ footer {
   animation: pulse-glow 2s infinite;
   box-shadow: 0 4px 15px rgba(255, 102, 0, 0.4);
   z-index: 999 !important;
+}
+.no-js .section,
+.no-js .project-card,
+.no-js .service-card {
+  opacity: 1 !important;
+  transform: none !important;
 }
