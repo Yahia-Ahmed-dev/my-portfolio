@@ -143,4 +143,3 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 const title = document.querySelector(".contact-title");
-// ممكن تضيف هنا كود لو عايز النص يتكتب حرف حرف أول ما يوصل عنده السكرول
