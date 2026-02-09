@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // مراقبة جميع العناصر التي نريد إظهارها
   const elementsToReveal = document.querySelectorAll(
-    ".section, .project-card, .service-card, .feature, .stat, .about-section"
+    ".section, .project-card, .service-card, .feature, .stat, .about-section",
   );
 
   elementsToReveal.forEach((element) => {
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             counterObserver.disconnect();
           }
         },
-        { threshold: 0.5 }
+        { threshold: 0.5 },
       );
 
       counterObserver.observe(counter);
@@ -142,3 +142,5 @@ window.addEventListener("load", () => {
     });
   }, 1000);
 });
+const title = document.querySelector(".contact-title");
+// ممكن تضيف هنا كود لو عايز النص يتكتب حرف حرف أول ما يوصل عنده السكرول
