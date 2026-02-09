@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
     <!-- SEO Meta -->
     <meta
       name="description"
-      content="يحيى أحمد - WordPress Developer متخصص في إنشاء مواقع عملية وذكية، تجذب العملاء وتزيد المبيعات."
+      content="يحيى أحمد - مطور وردبريس متخصص في بناء مواقع سريعة، متجاوبة، ومصممة بدقة لتناسب احتياجات الأعمال والشركات."
     />
     <meta
       name="keywords"
@@ -16,7 +16,7 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="icon" href="images/icon.png" type="image/png" />
 
     <!-- Open Graph -->
     <meta
@@ -56,7 +56,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <link
       rel="stylesheet"
@@ -64,7 +64,7 @@
       integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
 
     <!-- No-JS fallback -->
@@ -83,7 +83,7 @@
   <body>
     <!-- WhatsApp Button -->
     <a
-      href="https://wa.me/201206426798"
+      href="https://wa.me/201055842654"
       class="whatsapp-glow"
       target="_blank"
       rel="noopener"
@@ -102,7 +102,13 @@
     <nav class="navbar">
       <div class="nav-container">
         <div class="logo">
-          <a href="#home" style="color: var(--neon-red); text-decoration: none"
+          <a
+            href="#home"
+            style="
+              font-size: 35px;
+              color: var(--neon-red);
+              text-decoration: none;
+            "
             >YA</a
           >
         </div>
@@ -112,10 +118,20 @@
         <div class="nav-links" id="navLinks">
           <a href="#home">الرئيسية</a>
           <a href="#about">لماذا أنا؟</a>
+          <a href="#roadmap">خطة العمل</a>
           <a href="#services">خدماتي</a>
           <a href="#projects">أعمالي</a>
           <a href="#contact">تواصل معي</a>
         </div>
+
+        <a
+          style="font-size: 15px"
+          href="https://wa.me/201206426798"
+          class="btn btn-neon-red navbar-btn"
+          rel="noopener"
+        >
+          احجز استشارة الأن
+        </a>
       </div>
     </nav>
 
@@ -126,38 +142,37 @@
           <div class="name-line">
             <span class="name-outline">WordPress Developer</span>
           </div>
+
           <h1 class="title-highlight">
-            أصمم مواقع وردبريس سريعة، احترافية، وعصرية
+            أبني مواقع ووردبريس <br /><span class="highlight">سريعة</span>،
+            جذابة، ومتقنة تقنياً.
           </h1>
-          <p class="hero-subtitle">
-            مع يحيى نوير، احصل على موقع ووردبريس احترافي، سريع الاستجابة، ومبني
-            بأحدث أدوات التطوير ليناسب هوية مشروعك.
-          </p>
+
+          <div class="contact-header">
+            <div class="processing-box">
+              <h2 class="contact-title loading-effect">
+                هل تبحث عن <span class="highlight">إتقان فني</span> واستقرار
+                تقني؟
+                <span class="pulse-dots"
+                  ><span>.</span><span>.</span><span>.</span></span
+                >
+              </h2>
+            </div>
+            <p class="contact-description">
+              أنا <strong>يحيى أحمد</strong>، أصمم لك تجربة تجمع بين تناسق
+              الألوان وسلاسة الاستخدام، مع ضمان استقرار الموقع وسرعته.
+            </p>
+          </div>
+
           <div class="hero-buttons">
             <a
               href="https://wa.me/201206426798"
               class="btn btn-neon-red"
               rel="noopener"
             >
-              <i class="fas fa-rocket"></i>
-              احصل على موقعك الآن
+              <i class="fas fa-rocket"></i> احصل على موقعك
             </a>
             <a href="#projects" class="btn btn-neon-yellow">استعرض أعمالي</a>
-          </div>
-        </div>
-        <div class="hero-image">
-          <div class="cartoon-container">
-            <picture>
-              <source srcset="images/myphoto.webp" type="image/webp" />
-              <source srcset="images/myphoto.jpg" type="image/jpeg" />
-              <img
-                src="images/myphoto.jpg"
-                alt="يحيى أحمد - WordPress Developer"
-                width="400"
-                height="400"
-                class="cartoon-img"
-              />
-            </picture>
           </div>
         </div>
       </div>
@@ -165,8 +180,23 @@
 
     <!-- About -->
     <section id="about" class="section about-section">
+      <div class="hero-image">
+        <div class="line-img-wrapper">
+          <picture>
+            <source srcset="images/myphoto.webp" type="image/webp" />
+            <source srcset="images/myphoto.jpg" type="image/jpeg" />
+            <img
+              src="images/myphoto.jpg"
+              alt="يحيى أحمد - WordPress Developer"
+              width="400"
+              height="400"
+              class="cartoon-img"
+            />
+          </picture>
+        </div>
+      </div>
       <h2 class="section-title">
-        أنا لا أبني مجرد مواقع... أنا أصنع تجارب رقمية
+        أنا لا أبني مجرد مواقع عادية... أنا أصنع واجهات رقمية تقودك للنمو.
       </h2>
       <div class="about-container">
         <div class="about-content">
@@ -175,26 +205,35 @@
             والأداء البرمجي
           </h3>
           <p class="about-text">
-            أنا <strong>يحيى نوير</strong>، متخصص في تطوير مواقع
+            أنا <strong>يحيى أحمد</strong>، متخصص في تطوير مواقع
             <strong>WordPress</strong> متكاملة، أهتم بأدق التفاصيل البرمجية
             لضمان تجربة مستخدم <strong>(UI/UX)</strong> فريدة، سريعة، ومواكبة
             لأحدث صيحات الويب العالمية.
           </p>
           <div class="about-features">
             <div class="feature">
-              <i class="fas fa-magnet feature-icon" aria-hidden="true"></i>
-              <h4>جذب وتحويل</h4>
-              <p>تصميمات مدروسة تقود الزائر لطلب الخدمة بسهولة.</p>
+              <i class="fas fa-eye feature-icon"></i>
+              <h4>دقة التنفيذ</h4>
+              <p>
+                أهتم بتفاصيل التصميم الصغيره، من المسافات البينية (Spacing) إلى
+                تناسق الألوان، لضمان واجهة احترافية تليق ببراندك.
+              </p>
             </div>
             <div class="feature">
-              <i class="fas fa-bolt feature-icon" aria-hidden="true"></i>
-              <h4>سرعة تسبق المنافسين</h4>
-              <p>مواقع خفيفة وسريعة لأن كل ثانية تأخير = عميل ضائع.</p>
+              <i class="fas fa-code feature-icon"></i>
+              <h4>أداء تقني مستقر</h4>
+              <p>
+                أتعامل مع مشاكل الوردبريس التقنية بحلول جذرية، مع التركيز على
+                سرعة التحميل (Performance) لضمان بقاء الزائر أطول فترة ممكنة.
+              </p>
             </div>
             <div class="feature">
-              <i class="fas fa-award feature-icon" aria-hidden="true"></i>
-              <h4>ثقة من أول زيارة</h4>
-              <p>واجهات احترافية تجعل العميل يشعر أنه في المكان الصحيح.</p>
+              <i class="fas fa-check-circle feature-icon"></i>
+              <h4>مرونة وسهولة إدارة</h4>
+              <p>
+                أسلمك موقعاً سهل التحكم فيه بنفسك، مع الالتزام التام بمواعيد
+                التسليم ودعمك في أي استفسار تقني بعد الإطلاق.
+              </p>
             </div>
           </div>
         </div>
@@ -205,7 +244,7 @@
           </div>
           <div class="stat">
             <h3 class="stat-number">100%</h3>
-            <p class="stat-text">تركيز على النتائج</p>
+            <p class="stat-text">تركيز على الجودة والنتائج</p>
           </div>
           <div class="stat">
             <h3 class="stat-number">24 ساعة</h3>
@@ -215,71 +254,132 @@
       </div>
     </section>
 
-    <!-- Services -->
-    <section id="services" class="section services-section">
-      <h2 class="section-title">كيف أساعدك على النمو؟</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+    <!-- roadmap section -->
+    <section id="roadmap" class="roadmap-section">
+      <div class="container">
+        <h2 class="section-title">إزاي بنحول فكرتك لموقع ناجح؟</h2>
+
+        <div class="roadmap-wrapper">
+          <div class="roadmap-line"></div>
+
+          <div class="roadmap-item">
+            <div class="num-box">
+              <div class="glow-ring"></div>
+              <span class="num">01</span>
+            </div>
+            <div class="roadmap-card">
+              <h3>فهم الهدف</h3>
+              <p>
+                بندردش في تفاصيل مشروعك ومين جمهورك، عشان نطلع بأفضل خطة تناسب
+                ميزانيتك وأهدافك.
+              </p>
+            </div>
           </div>
-          <h3 class="service-title">مواقع WordPress تخدم أهدافك</h3>
-          <p class="service-description">
-            مواقع سريعة ومتجاوبة تركز على تحويل الزائر إلى عميل.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-code" aria-hidden="true"></i>
+
+          <div class="roadmap-item">
+            <div class="num-box">
+              <div class="glow-ring"></div>
+              <span class="num">02</span>
+            </div>
+            <div class="roadmap-card">
+              <h3>رسم الخريطة</h3>
+              <p>
+                بصمم لك شكل مبدئي للموقع يركز على سهولة الاستخدام، عشان العميل
+                يدخل يطلب خدمتك فوراً.
+              </p>
+            </div>
           </div>
-          <h3 class="service-title">تخصيص كامل</h3>
-          <p class="service-description">
-            أحول أي فكرة في موقعك إلى تصميم وكود جاهز للعمل.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-search" aria-hidden="true"></i>
+
+          <div class="roadmap-item">
+            <div class="num-box">
+              <div class="glow-ring"></div>
+              <span class="num">03</span>
+            </div>
+            <div class="roadmap-card">
+              <h3>التنفيذ والبرمجة</h3>
+              <p>
+                هنا ببدأ أبني موقعك على وردبريس بأحدث الأدوات، مع ضمان السرعة
+                التامة والحماية من أي اختراق.
+              </p>
+            </div>
           </div>
-          <h3 class="service-title">ظهور أقوى في جوجل</h3>
-          <p class="service-description">
-            تحسين سرعة الموقع وSEO للوصول للعملاء بسهولة.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+
+          <div class="roadmap-item">
+            <div class="num-box">
+              <div class="glow-ring"></div>
+              <span class="num">04</span>
+            </div>
+            <div class="roadmap-card">
+              <h3>الاختبار والتجهيز</h3>
+              <p>
+                بنجرب الموقع على الموبايل والكمبيوتر وبنتأكد إن كل ثانية في
+                التحويل شغالة بامتياز قبل الانطلاق.
+              </p>
+            </div>
           </div>
-          <h3 class="service-title">تجربة مثالية على كل الأجهزة</h3>
-          <p class="service-description">
-            موبايل – تابلت – كمبيوتر بنفس القوة والتأثير.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+
+          <div class="roadmap-item">
+            <div class="num-box">
+              <div class="glow-ring"></div>
+              <span class="num">05</span>
+            </div>
+            <div class="roadmap-card">
+              <h3>الاستلام والدعم</h3>
+              <p>
+                بسلمك موقعك جاهز، وبكون معاك أعلمك إزاي تديره بنفسك، مع دعم فني
+                مستمر لأي استفسار.
+              </p>
+            </div>
           </div>
-          <h3 class="service-title">أمان واستقرار دائم</h3>
-          <p class="service-description">
-            حماية وصيانة مستمرة ليعمل موقعك بدون قلق.
-          </p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-rocket" aria-hidden="true"></i>
-          </div>
-          <h3 class="service-title">Landing Pages تبيع</h3>
-          <p class="service-description">
-            صفحات للإعلانات تزيد معدل التحويل لأقصى حد.
-          </p>
         </div>
       </div>
     </section>
-
     <!-- Projects -->
     <section id="projects" class="section projects-section">
       <h2 class="section-title">معرض أعمالي</h2>
       <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">موقع طبي</div>
+            <a
+              href="https://dr-ahmedsallam.com/"
+              target="_blank"
+              rel="noopener"
+            >
+              <img
+                src="images/dr-ahmedsallam.webp"
+                alt="دكتور احمد سلام"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">دكتور احمد سلام</h3>
+            <p class="project-desc">
+              موقع طبي احترافي لدكتور. أحمد سلام، استشاري جراحات العظام
+              والمفاصل، يهدف إلى عرض الخدمات الطبية بشكل واضح وبناء ثقة المرضى.
+              الموقع يدعم اللغتين العربية والإنجليزية، ويحتوي على نظام حجز
+              مواعيد ذكي ونموذج تواصل مباشر، مع تصميم سريع ومتجاوب يسهّل على
+              المرضى الحجز والتواصل بسهولة.
+            </p>
+            <div class="tech-stack">
+              <span>Wordpress</span>
+              <span>Elementor</span>
+              <span>Js</span>
+              <span>CSS & Html</span>
+            </div>
+            <a
+              href="https://dr-ahmedsallam.com/"
+              class="live-btn"
+              target="_blank"
+              rel="noopener"
+            >
+              معاينة المشروع
+            </a>
+          </div>
+        </div>
+
         <div class="project-card">
           <div class="project-img">
             <div class="project-badge">Futuristic AI</div>
@@ -303,7 +403,7 @@
               cyberpunk-inspired design.
             </p>
             <div class="tech-stack">
-              <span>Page Builder</span>
+              <span>Elementor</span>
               <span>Js</span>
               <span>CSS & Html</span>
             </div>
@@ -335,7 +435,8 @@
               منصة عقارية احترافية تساعد العميل على الوصول للعقار المناسب.
             </p>
             <div class="tech-stack">
-              <span>Page Builder</span>
+              <span>Wordpress</span>
+              <span>Elementor</span>
               <span>PHP</span>
               <span>CSS3</span>
               <span>Acf & Cpt</span>
@@ -372,12 +473,14 @@
               واجهة عصرية وأنيميشن ناعم يعكس هوية الوكالة.
             </p>
             <div class="tech-stack">
-              <span>Page Builder</span>
+              <span>Wordpress</span>
+
+              <span>Elementor</span>
               <span>PHP</span>
               <span>CSS Animation</span>
             </div>
             <a
-              href="https://www.behance.net/gallery/242286647/Modern-Agency-Website-High-Performance-UIUX"
+              href="https://alrehabexporting.com/"
               class="live-btn"
               target="_blank"
               rel="noopener"
@@ -389,29 +492,32 @@
 
         <div class="project-card">
           <div class="project-img">
-            <div class="project-badge">medical</div>
+            <div class="project-badge">استيراد وتصدير</div>
             <a
-              href="https://www.behance.net/gallery/242291883/-medical-website"
+              href="https://alrehabexporting.com/"
               target="_blank"
               rel="noopener"
             >
               <img
-                src="images/dr-ahmed.webp"
-                alt="موقع طبي"
+                src="images/alrehab.webp"
+                alt="alrehab exporting"
                 width="600"
                 height="400"
               />
             </a>
           </div>
           <div class="project-content">
-            <h3 class="project-title">عيادة د.احمد السيد</h3>
+            <h3 class="project-title">Alrehab Exporting</h3>
             <p class="project-desc">
-              تصميم "Landing Page" احترافية لعيادة طبية، تضمن أقصى سرعة تحميل
-              وأعلى نسبة تحويل للزوار إلى حجوزات فعلية.
+              موقع احترافي لشركة الرحاب المصرية لتصدير الحاصلات الزراعية، يهدف
+              إلى عرض منتجات الشركة وخدمات التصدير بشكل واضح وموثوق، مع تصميم
+              نظيف ومتجاوب يعكس جودة المنتجات وقوة الحضور في الأسواق العالمية.
             </p>
             <div class="tech-stack">
-              <span>Html</span>
-              <span>Css</span>
+              <span>Wordpress</span>
+              <span>Elementor</span>
+              <span>Custom CSS</span>
+              <span>Custom Html & Css</span>
               <span>Js</span>
             </div>
             <a
@@ -447,9 +553,8 @@
               تصميم موقع مطعم سريع، يركز على عرض قائمة الطعام بشكل شهي.
             </p>
             <div class="tech-stack">
-              <span>Page Builder</span>
-              <span>PHP</span>
-              <span>CSS</span>
+              <span>Elementor</span>
+              <span>Wordpress</span>
             </div>
             <a
               href="https://www.behance.net/gallery/239950137/Modern-Restaurant-Website-Online-Orders-Booking"
@@ -457,6 +562,37 @@
               target="_blank"
               rel="noopener"
             >
+              معاينة المشروع
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img">
+            <div class="project-badge">موقع طبي</div>
+            <a href="#" target="_blank" rel="noopener">
+              <img
+                src="images/dr-ahmed.webp"
+                alt="دكتوراحمدالسيد"
+                width="600"
+                height="400"
+              />
+            </a>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">دكتور أحمد السيد</h3>
+            <p class="project-desc">
+              موقع طبي احترافي لدكتور. أحمد السيد استشاري جهاز هضمي وكبد، يهدف
+              إلى عرض الخدمات الطبية بشكل واضح وبناء ثقة المرضى، مع تصميم سريع
+              ومتجاوب يسهّل على المرضى الحجز والتواصل بسهولة.
+            </p>
+            <div class="tech-stack">
+              <span>Wordpress</span>
+              <span>Elementor</span>
+              <span>Js</span>
+              <span>CSS & Html</span>
+            </div>
+            <a href="#" class="live-btn" target="_blank" rel="noopener">
               معاينة المشروع
             </a>
           </div>
@@ -485,7 +621,7 @@
               موقع "Minimalist" يركز على جودة الصور وسرعة التحميل.
             </p>
             <div class="tech-stack">
-              <span>Page Builder</span>
+              <span>Elementor</span>
               <span>PHP</span>
               <span>Css & Js</span>
               <span>Custom CSS</span>
@@ -524,6 +660,7 @@
               منصة تعليمية لتنظيم المحتوى الدراسي وتسهيل الوصول للمحاضرات.
             </p>
             <div class="tech-stack">
+              <span>Wordpress</span>
               <span>LMS Content</span>
               <span>PHP</span>
               <span>CSS</span>
@@ -557,7 +694,8 @@
               موقع طبي متكامل يركز على بناء الثقة وتسهيل الحجز.
             </p>
             <div class="tech-stack">
-              <span>Page Builder</span>
+              <span>Wordpress</span>
+              <span>Elementor</span>
               <span>PHP</span>
               <span>Booking</span>
               <span>Custom CSS</span>
@@ -579,7 +717,9 @@
     <section id="contact" class="contact-section urgency-section">
       <div class="limited-offer">
         <span class="offer-badge">عرض خاص</span>
-        <h2 class="contact-title">تصميم يحول + سرعة تبهر = 📈 مبيعات تزيد</h2>
+        <h2 class="contact-title">
+          احصل على موقعك الاحترافي الآن.. واستفد من خصم لفترة محدودة!
+        </h2>
       </div>
 
       <a
