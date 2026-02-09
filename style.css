@@ -48,7 +48,7 @@ body {
 .glow-circle {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(100px);
   opacity: 0.12;
   animation: float 20s infinite linear;
   will-change: transform;
@@ -104,7 +104,7 @@ body {
 }
 
 .nav-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -202,8 +202,11 @@ body {
 
 .hero-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
   width: 100%;
   opacity: 1;
   transform: translateY(0);
@@ -211,9 +214,10 @@ body {
 
 .hero-content {
   flex: 1;
-  text-align: right;
+  text-align: center;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .hero-image {
@@ -227,20 +231,57 @@ body {
 /* الصورة الكرتونية */
 .cartoon-container {
   position: relative;
-  width: 450px;
+  width: 550px;
   height: 450px;
   margin: 0 auto;
 }
 
+/* الخط الأصفر الممتد قبل وبعد الصورة */
+.line-img-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.line-img-wrapper::before,
+.line-img-wrapper::after {
+  content: "";
+  flex: 1;
+  width: 700px;
+  max-width: 100%;
+  height: 4px; /* سمك الخط */
+  background: var(--neon-yellow);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--neon-yellow);
+}
+
+.line-img-wrapper::before {
+  margin-right: 20px; /* مسافة بين الخط والصورة */
+}
+
+.line-img-wrapper::after {
+  margin-left: 20px; /* مسافة بين الخط والصورة */
+}
+
 .cartoon-img {
-  width: 100%;
-  height: 100%;
+  border-radius: 50%; /* شكل دائري للصورة */
+  max-width: 350px;
+  height: auto;
+  box-shadow: 0 0 30px rgba(255, 204, 0, 0.5); /* توهج للصورة */
+  z-index: 1;
+  transition: transform 0.5s ease;
   filter: drop-shadow(0 0 30px rgba(255, 0, 60, 0.3));
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid var(--neon-yellow);
   backface-visibility: hidden;
   will-change: transform;
+}
+
+.cartoon-img:hover {
+  transform: scale(1.05); /* تأثير تكبير خفيف عند hover */
 }
 
 .name-outline {
@@ -256,15 +297,38 @@ body {
 }
 
 .title-highlight {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  display: inline-block;
+
   background: linear-gradient(45deg, var(--neon-red), var(--neon-yellow));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 2.8rem;
-  font-weight: 800;
-  line-height: 1.3;
-  margin-bottom: 20px;
-  animation: slideInRight 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
-  animation-delay: 0.3s;
+
+  filter: 
+    /* 1. التجسيم (الظل الصلب) */ drop-shadow(
+      2px 2px 0px rgba(128, 0, 0, 0.8)
+    )
+    /* 2. إضاءة بسيطة باللون الأحمر من جهة */
+    drop-shadow(0 0 8px rgba(255, 0, 85, 0.4))
+    /* 3. إضاءة بسيطة باللون الأصفر من الجهة التانية */
+    drop-shadow(0 0 15px rgba(255, 255, 0, 0.185));
+
+  /* حركة الدخول بتاعتك */
+  animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+
+  letter-spacing: -1px;
+}
+
+@keyframes neon-glow {
+  0% {
+    filter: drop-shadow(0 0 5px var(--neon-red));
+  }
+  100% {
+    filter: drop-shadow(0 0 15px var(--neon-red));
+  }
 }
 
 @keyframes slideInLeft {
@@ -297,17 +361,6 @@ body {
     transform: translateX(0);
     opacity: 1;
   }
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: var(--text-gray);
-  margin-bottom: 30px;
-  margin-top: 15px;
-  line-height: 1.8;
-  max-width: 90%;
-  animation: fadeInUpBlur 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  animation-delay: 0.6s;
 }
 
 @keyframes fadeInUpBlur {
@@ -399,6 +452,7 @@ body {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+  overflow: hidden;
 }
 
 .section-title {
@@ -494,7 +548,8 @@ body {
   position: relative;
   border: 3px solid transparent;
   border-radius: 20px;
-  background: linear-gradient(90deg, #000, #000) padding-box,
+  background:
+    linear-gradient(90deg, #000, #000) padding-box,
     linear-gradient(
         90deg,
         var(--neon-red),
@@ -513,7 +568,9 @@ body {
 .feature.visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 @keyframes borderGradient {
@@ -549,7 +606,8 @@ body {
   position: relative;
   border: 3px solid transparent;
   border-radius: 20px;
-  background: linear-gradient(90deg, #000, #000) padding-box,
+  background:
+    linear-gradient(90deg, #000, #000) padding-box,
     linear-gradient(
         90deg,
         var(--neon-red),
@@ -567,7 +625,9 @@ body {
 .stat.visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .stat-number {
@@ -583,6 +643,138 @@ body {
   font-size: 1rem;
 }
 
+:root {
+  --neon-red: #ff003c;
+  --neon-yellow: #ffcc00;
+}
+
+.roadmap-section {
+  padding: 80px 0;
+  background: #050507;
+  overflow: hidden;
+}
+
+.roadmap-wrapper {
+  position: relative;
+  max-width: 800px;
+  margin: 50px auto;
+  padding-right: 60px;
+}
+
+/* الخط العمودي الثابت */
+.roadmap-line {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.roadmap-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--neon-yellow));
+  box-shadow: 0 0 15px var(--neon-red);
+  transform-origin: top;
+}
+
+.roadmap-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+/* تصميم صندوق الرقم النيوني */
+.num-box {
+  position: absolute;
+  right: -65px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.num {
+  font-family: "Cairo", sans-serif;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.1rem;
+  z-index: 2;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.glow-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0d0d12;
+  border: 2px solid var(--neon-red);
+  border-radius: 12px;
+  transform: rotate(45deg); /* شكل معيني جذاب */
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.3);
+  transition: 0.3s;
+}
+
+.roadmap-item:hover .glow-ring {
+  transform: rotate(45deg) scale(1.1);
+  border-color: var(--neon-yellow);
+  box-shadow: 0 0 20px var(--neon-yellow);
+}
+
+/* الكارت */
+.roadmap-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.roadmap-card h3 {
+  color: var(--neon-yellow);
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.roadmap-card p {
+  color: #a0a0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.roadmap-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-right: 4px solid var(--neon-red);
+  transform: translateX(-5px);
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+  .roadmap-wrapper {
+    padding-right: 45px;
+  }
+  .num-box {
+    right: -42px;
+    width: 35px;
+    height: 35px;
+  }
+  .num {
+    font-size: 0.8rem;
+  }
+  .roadmap-card {
+    padding: 15px;
+  }
+}
 /* Services Section */
 .services-section {
   margin: 40px auto;
@@ -611,7 +803,9 @@ body {
 .service-card.visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .service-card:hover {
@@ -687,13 +881,14 @@ body {
   border: 1px solid rgba(255, 0, 60, 0.15);
   transition: all 0.4s ease;
   position: relative;
-  transform: translateY(20px);
 }
 
 .project-card.visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
 }
 
 .project-card:hover {
@@ -827,22 +1022,106 @@ body {
   position: relative;
   background: rgba(13, 13, 18, 0.8);
   border-radius: 30px;
-  margin: 40px auto;
+  margin: 30px auto;
   max-width: 1200px;
   border: 1px solid rgba(255, 0, 60, 0.2);
 }
 
-.contact-title {
-  font-size: 3rem;
-  font-weight: 900;
-  margin-bottom: 20px;
-}
-
 .contact-subtitle {
   font-size: 1.2rem;
-  color: var(--text-gray);
+  color: rgb(226, 226, 226);
   max-width: 600px;
   margin: 0 auto 50px;
+  font-weight: 700;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+}
+
+/* الحاوية الأساسية */
+.processing-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading-effect {
+  font-size: 2.5rem;
+  color: var(--text-light);
+  /* أنيميشن الظهور والاختفاء مع وميض خفيف */
+  animation: techLoading 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes techLoading {
+  0% {
+    opacity: 0.7;
+    filter: brightness(0.5);
+    letter-spacing: 5px; /* الكلام بيبعد عن بعضه وهو بيختفي */
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(1.2) blur(0);
+    letter-spacing: 0px; /* الكلام بيتجمع وهو ظاهر */
+  }
+
+  100% {
+    opacity: 0.7;
+    filter: brightness(0.5);
+    letter-spacing: 5px; /* الكلام بيبعد عن بعضه وهو بيختفي */
+  }
+}
+
+/* تأثير النقط اللي بتنور وتطفي ورا بعضها */
+.pulse-dots span {
+  animation: dotBlink 1.4s infinite both;
+  color: var(--neon-yellow);
+  font-size: 1.5em;
+}
+
+.pulse-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.pulse-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotBlink {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--neon-yellow);
+  }
+}
+
+/* الكلمة المميزة */
+.highlight {
+  background: linear-gradient(180deg, var(--neon-red), var(--neon-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.contact-title .highlight {
+  background: linear-gradient(45deg, var(--neon-red), var(--neon-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.contact-description {
+  font-size: 1.25rem;
+  color: #cdcdcd;
+  max-width: 800px;
+  margin: 20px auto 40px;
+  line-height: 1.9;
+  font-weight: 300;
 }
 
 .social-links {
@@ -904,40 +1183,62 @@ footer {
   font-size: 0.9rem;
 }
 
-/* WhatsApp Button */
+/* WhatsApp Floating Button */
+/* WhatsApp Button – Neon Pulse Grow */
 .whatsapp-glow {
   background: linear-gradient(45deg, var(--neon-red), #ff6600);
-  box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
   position: fixed;
   bottom: 20px;
-  left: 17px;
+  right: 17px;
+
   width: 55px;
   height: 55px;
-  text-decoration: none;
   border-radius: 50%;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   font-size: 28px;
-  color: white;
+  color: #fff;
+  text-decoration: none;
+
   z-index: 1000;
-  animation: pulse-glow 2s infinite;
-  backface-visibility: hidden;
+
+  box-shadow: 0 8px 25px rgba(255, 60, 60, 0.45);
+  animation: pulse-grow 2.5s ease-out infinite;
+
   will-change: transform, box-shadow;
+  backface-visibility: hidden;
 }
 
-@keyframes pulse-glow {
+/* Pulse Grow Animation */
+@keyframes pulse-grow {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 25px rgba(255, 0, 60, 0.5);
+    box-shadow: 0 0 0 0 rgba(255, 60, 60, 0.6);
   }
-  70% {
-    transform: scale(1.1);
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  60% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 16px rgba(255, 60, 60, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 0 rgba(255, 60, 60, 0);
+  }
+}
+
+/* Hover – Premium Feel */
+.whatsapp-glow:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 35px rgba(255, 102, 0, 0.7);
+  animation-play-state: paused;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-glow {
+    animation: none;
   }
 }
 
@@ -954,9 +1255,13 @@ footer {
 /* Responsive Design */
 @media (max-width: 992px) {
   .hero-container {
-    flex-direction: column-reverse;
+    grid: 30px;
+    flex-direction: column;
     text-align: center;
-    gap: 50px;
+  }
+
+  .navbar-btn {
+    display: none;
   }
 
   .limited-offer {
@@ -1106,7 +1411,7 @@ footer {
   }
 
   #home {
-    padding: 120px 20px 60px;
+    padding: 120px 20px 10px;
   }
 
   .hero-container {
@@ -1146,7 +1451,7 @@ footer {
 
 @media (max-width: 480px) {
   #home {
-    padding: 100px 15px 40px;
+    padding: 120px 15px 0px;
   }
 
   .urgent-btn {
@@ -1189,8 +1494,8 @@ footer {
 
   .about-section,
   .contact-section {
-    padding: 40px 20px;
-    margin: 30px 20px;
+    padding: 20px;
+    margin: 20px;
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
@@ -1217,7 +1522,7 @@ footer {
   }
 
   .contact-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-top: 10px;
   }
 
@@ -1248,6 +1553,11 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 0px;
+    justify-content: center;
+  }
+
+  .cartoon-img {
+    width: 200px;
   }
 }
 
@@ -1351,7 +1661,9 @@ footer {
     transform: scale(1);
   }
   100% {
-    box-shadow: 0 0 25px rgba(255, 51, 0, 0.8), 0 0 35px rgba(255, 102, 0, 0.5);
+    box-shadow:
+      0 0 25px rgba(255, 51, 0, 0.8),
+      0 0 35px rgba(255, 102, 0, 0.5);
     transform: scale(1.05);
   }
 }
