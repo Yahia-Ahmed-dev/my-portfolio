@@ -52,7 +52,6 @@ body {
   opacity: 0.12;
   animation: float 20s infinite linear;
   will-change: transform;
-  backface-visibility: hidden;
 }
 
 .glow-1 {
@@ -71,22 +70,6 @@ body {
   bottom: 10%;
   left: -100px;
   animation-delay: 5s;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(100px, 50px) rotate(90deg);
-  }
-  50% {
-    transform: translate(0, 100px) rotate(180deg);
-  }
-  75% {
-    transform: translate(-100px, 50px) rotate(270deg);
-  }
 }
 
 /* النافبار */
@@ -112,7 +95,7 @@ body {
 }
 
 .logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 900;
   background: linear-gradient(45deg, var(--neon-red), var(--neon-yellow));
   -webkit-background-clip: text;
@@ -189,15 +172,47 @@ body {
 
 /* Hero Section */
 #home {
-  padding-top: 150px;
+  padding-top: 120px;
   padding-left: 50px;
   padding-right: 50px;
-  max-width: 1300px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
+}
+
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* الشبكة البيضاء */
+  background-image:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.178) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+  background-position: -30px -30px;
+
+  animation: gridMove 15s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: -30px -30px;
+  }
+  100% {
+    background-position: 30px 30px;
+  }
 }
 
 .hero-container {
@@ -218,14 +233,6 @@ body {
   position: relative;
   z-index: 2;
   width: 100%;
-}
-
-.hero-image {
-  flex: 1;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* الصورة الكرتونية */
@@ -320,64 +327,6 @@ body {
   animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 
   letter-spacing: -1px;
-}
-
-@keyframes neon-glow {
-  0% {
-    filter: drop-shadow(0 0 5px var(--neon-red));
-  }
-  100% {
-    filter: drop-shadow(0 0 15px var(--neon-red));
-  }
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-    filter: blur(5px);
-  }
-  70% {
-    transform: translateX(10px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-    filter: blur(0);
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  70% {
-    transform: translateX(-10px);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUpBlur {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-    filter: blur(10px);
-  }
-  50% {
-    opacity: 0.5;
-    filter: blur(4px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-  }
 }
 
 /* الأزرار */
@@ -560,8 +509,6 @@ body {
       border-box;
   transition: 0.4s ease;
   background-size: 300% 300%;
-  animation: borderGradient 3s linear infinite;
-  will-change: background-position;
   transform: translateY(20px);
 }
 
@@ -571,18 +518,6 @@ body {
   transition:
     opacity 0.8s ease,
     transform 0.8s ease;
-}
-
-@keyframes borderGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .feature-icon {
@@ -618,7 +553,6 @@ body {
       border-box;
   transition: 0.4s ease;
   background-size: 300% 300%;
-  animation: borderGradient 3s linear infinite;
   transform: translateY(20px);
 }
 
@@ -797,15 +731,6 @@ body {
   overflow: hidden;
   cursor: pointer;
   transform: translateY(30px);
-  backface-visibility: hidden;
-}
-
-.service-card.visible {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
 }
 
 .service-card:hover {
@@ -977,7 +902,6 @@ body {
   animation: pulse 2s infinite;
   border: none;
   cursor: pointer;
-  backface-visibility: hidden;
 }
 
 .live-btn:hover {
@@ -1042,38 +966,6 @@ body {
   letter-spacing: -0.5px;
 }
 
-/* الحاوية الأساسية */
-.processing-box {
-  position: relative;
-  overflow: hidden;
-}
-
-.loading-effect {
-  font-size: 2.5rem;
-  color: var(--text-light);
-  /* أنيميشن الظهور والاختفاء مع وميض خفيف */
-  animation: techLoading 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes techLoading {
-  0% {
-    opacity: 0.7;
-    filter: brightness(0.5);
-    letter-spacing: 5px; /* الكلام بيبعد عن بعضه وهو بيختفي */
-  }
-  50% {
-    opacity: 1;
-    filter: brightness(1.2) blur(0);
-    letter-spacing: 0px; /* الكلام بيتجمع وهو ظاهر */
-  }
-
-  100% {
-    opacity: 0.7;
-    filter: brightness(0.5);
-    letter-spacing: 5px; /* الكلام بيبعد عن بعضه وهو بيختفي */
-  }
-}
-
 /* تأثير النقط اللي بتنور وتطفي ورا بعضها */
 .pulse-dots span {
   animation: dotBlink 1.4s infinite both;
@@ -1116,7 +1008,7 @@ body {
 }
 
 .contact-description {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #cdcdcd;
   max-width: 800px;
   margin: 20px auto 40px;
@@ -1144,7 +1036,6 @@ body {
   text-decoration: none;
   transition: all 0.3s ease;
   border: 1px solid rgba(255, 0, 60, 0.2);
-  backface-visibility: hidden;
 }
 
 .social-icon:hover {
@@ -1207,9 +1098,6 @@ footer {
 
   box-shadow: 0 8px 25px rgba(255, 60, 60, 0.45);
   animation: pulse-grow 2.5s ease-out infinite;
-
-  will-change: transform, box-shadow;
-  backface-visibility: hidden;
 }
 
 /* Pulse Grow Animation */
@@ -1280,8 +1168,8 @@ footer {
     font-size: 1.6rem;
   }
 
-  .contact-subtitle {
-    font-size: 1.1rem;
+  .contact-description {
+    display: none;
   }
 
   .whats-included {
@@ -1326,6 +1214,10 @@ footer {
 
   .about-features {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logo {
+    font-size: 1.3rem;
   }
 }
 
@@ -1428,7 +1320,7 @@ footer {
   }
 
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .services-grid {
@@ -1485,11 +1377,15 @@ footer {
   }
 
   .section-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .about-heading {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
   }
 
   .about-section,
@@ -1898,4 +1794,54 @@ footer {
 .no-js .service-card {
   opacity: 1 !important;
   transform: none !important;
+}
+
+/* ===== تخصيص Scrollbar محسّن ===== */
+
+/* للويبكيت (Chrome, Safari, Edge جديد) */
+::-webkit-scrollbar {
+  width: 50px; /* أخف من 50px */
+  height: 8px; /* أخف قليلاً */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    45deg,
+    var(--neon-red) 30%,
+    var(--neon-yellow) 70%
+  );
+  border-radius: 8px;
+  border: 2px solid #3a3a3d; /* حدود رمادية متناسقة */
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(45deg, #ff3366 30%, #ffd633 70%);
+}
+
+::-webkit-scrollbar-corner {
+  background: #1a1a1d; /* أغمق قليلاً */
+}
+
+/* لفايرفوكس */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-red) #2a2a2d; /* نفس اللون الرمادي */
+}
+
+/* تحسين للشاشات الصغيرة */
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 20px; /* أرفع على الموبايل */
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1a1a1ad3; /* أفتح قليلاً على الموبايل */
+  }
+}
+
+/* تأثير خفيف للظل */
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #2a2a2d 0%, #323235 50%, #2a2a2d 100%);
 }
