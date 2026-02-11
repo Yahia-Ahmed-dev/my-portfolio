@@ -29,31 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // 3. إظهار العناصر عند التمرير (Intersection Observer)
-  const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        // لا نوقف المراقبة حتى نضمن الظهور
-      }
-    });
-  }, observerOptions);
-
-  // مراقبة جميع العناصر التي نريد إظهارها
-  const elementsToReveal = document.querySelectorAll(
-    ".section, .project-card, .service-card, .feature, .stat, .about-section",
-  );
-
-  elementsToReveal.forEach((element) => {
-    element.classList.add("reveal-on-scroll");
-    revealObserver.observe(element);
-  });
-
   // 4. عداد الإحصائيات
   function animateCounters() {
     const counters = document.querySelectorAll(".stat-number");
@@ -143,3 +118,4 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 const title = document.querySelector(".contact-title");
+// ممكن تضيف هنا كود لو عايز النص يتكتب حرف حرف أول ما يوصل عنده السكرول
