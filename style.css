@@ -1343,7 +1343,7 @@ footer {
 
 @media (max-width: 480px) {
   #home {
-    padding: 120px 15px 0px;
+    padding: 60px 15px 0px;
   }
 
   .urgent-btn {
