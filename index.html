@@ -118,8 +118,7 @@
         <div class="nav-links" id="navLinks">
           <a href="#home">الرئيسية</a>
           <a href="#about">لماذا أنا؟</a>
-          <a href="#roadmap">خطة العمل</a>
-          <a href="#services">خدماتي</a>
+          <a href="#reviews-container">اراء العملاء</a>
           <a href="#projects">أعمالي</a>
           <a href="#contact">تواصل معي</a>
         </div>
@@ -144,15 +143,14 @@
           </div>
 
           <h1 class="title-highlight">
-            أبني مواقع ووردبريس <br /><span class="highlight">سريعة</span>،
-            جذابة، ومتقنة تقنياً.
+            أبني مواقع <br /><span class="highlight">سريعة</span>، جذابة، ومتقنة
+            تقنياً.
           </h1>
 
           <div class="contact-header">
             <div class="processing-box">
               <h2 class="contact-title loading-effect">
-                هل تبحث عن <span class="highlight">إتقان فني</span> واستقرار
-                تقني؟
+                جاهز لموقع <span class="highlight">احترافي</span> يكبر مشروعك؟
                 <span class="pulse-dots"
                   ><span>.</span><span>.</span><span>.</span></span
                 >
@@ -196,7 +194,7 @@
         </div>
       </div>
       <h2 class="section-title">
-        أنا لا أبني مجرد مواقع عادية... أنا أصنع واجهات رقمية تقودك للنمو.
+      أنا لا أبني مجرد مواقع عادية... 
       </h2>
       <div class="about-container">
         <div class="about-content">
@@ -713,6 +711,138 @@
       </div>
     </section>
 
+
+    <div class="reviews-container" id="reviews-container">
+                <h2 class="section-title">
+     شوف تجارب عملائي 
+      </h2>
+      <div class="cards-container">
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+      <p>"بصراحة يحيي انسان محترم وشاطر ومنظم , وعنده خبرة كبيرة في شغله وفي اختيار الالوان والتصميم وتطوير المواقع"</p>
+    <h4>أستاذ احمد</h4>
+    <strong>عميل - موقع مستقل</strong>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"كان عندي مشكلة في الموقع بتاعي , والبشمهندس يحيي الله يباركله ساعدني في حلها وظبطلي الموقع انصح بالتعامل معاه جدا!"</p>
+    <h4>خالد محمود</h4>
+        <strong>عميل - موقع مستقل</strong>
+
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>"ما شاء الله تسلم ايدك يهندسة , شغل عظمة والله!"</p>
+    <h4>بشمهندس وسيم</h4>
+    <strong>عميل</strong>
+  </div>
+
+  <div class="review-card dynamic-card" id="swappingCard">
+    <div class="card-content">
+      <div class="stars">★★★★★</div>
+      <p id="reviewText">"ما شاء الله شغلك جامد يغالي , ان شاء الله مش أخر تعامل"</p>
+      <h4 id="reviewerName">د.مصطفي محمود</h4>
+         <strong>عميل</strong>
+    </div>
+  </div>
+</div>
+</div>
+<style>
+:root {
+  --bg-dark: #0a0a0a;
+  --card-bg: #161616;
+  --accent: #ff0000;
+}
+
+.reviews-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px;
+  background-color: var(--bg-dark);
+  direction: rtl;
+  flex-wrap: wrap;
+}
+
+.cards-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.review-card {
+  width: 260px;
+  padding: 25px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+  color: #fff;
+  border: 1px solid #333;
+  transition: all 0.3s ease;
+}
+
+.stars { color: #ffc107; margin-bottom: 15px; }
+.review-card p { font-size: 0.95rem; line-height: 1.6; color: #ccc; min-height: 80px; }
+.review-card h4 { color: #fff; margin-top: 15px; font-size: 1rem; }
+
+/* أنيميشن التبديل للكارت الأخير فقط */
+.dynamic-card {
+  border-right: 3px solid var(--accent);
+}
+
+.swap-animation {
+  animation: flipOutIn 0.8s ease-in-out;
+}
+
+@keyframes flipOutIn {
+  0% { opacity: 1; transform: translateY(0); }
+  45% { opacity: 0; transform: translateY(20px); }
+  55% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+// مصفوفة الأراء اللي هتتبدل في الكارت الأخير
+const extraReviews = [
+  { name: "علي القاضي", text: "دقة في المواعيد وذوق في التعامل، والـ SEO بدأ يسمع في جوجل." },
+  { name: "ياسين محمد", text: "شكراً على الدعم الفني بعد التسليم، بجد شخص محترف ومتمكن." },
+  { name: "كريم فؤاد", text: "أفضل تجربة ووردبريس مريت بيها، الكود نظيف جداً وسهل التعديل." },
+  { name: "أميرة كمال", text: "سرعة الاستجابة خرافية، والموقع طالع أحسن مما كنت أتخيل." }
+];
+
+let currentIndex = 0;
+const swappingCard = document.getElementById('swappingCard');
+const reviewText = document.getElementById('reviewText');
+const reviewerName = document.getElementById('reviewerName');
+
+function swapReview() {
+  // إضافة كلاس الأنيميشن
+  swappingCard.classList.add('swap-animation');
+  
+  // نغير المحتوى في نص الأنيميشن (لما الكارت يختفي)
+  setTimeout(() => {
+    currentIndex = (currentIndex + 1) % extraReviews.length;
+    reviewText.innerText = `"${extraReviews[currentIndex].text}"`;
+    reviewerName.innerText = extraReviews[currentIndex].name;
+  }, 400); // 400ms هي نص مدة الأنيميشن
+
+  // نشيل الكلاس عشان نقدر نضيفه تاني المرة الجاية
+  setTimeout(() => {
+    swappingCard.classList.remove('swap-animation');
+  }, 800);
+}
+
+// التبديل كل ثانيتين (2000ms)
+setInterval(swapReview, 2500); 
+</script>
+
     <!-- Contact -->
     <section id="contact" class="contact-section urgency-section">
       <div class="limited-offer">
@@ -737,6 +867,11 @@
           <li><i class="fas fa-check"></i> تحسين سرعة + SEO أساسي</li>
           <li><i class="fas fa-check"></i> تدريب على إدارة الموقع</li>
           <li><i class="fas fa-check"></i> دعم فني لمدة شهر</li>
+          <li></i>للتواصل واتس: 01055842654</li>
+          <li>
+           </i> البريد الالكتروني :
+            yahiaahmed200300@gmail.com
+          </li>
         </ul>
       </div>
     </section>
